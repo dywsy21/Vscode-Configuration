@@ -1,0 +1,14 @@
+_minted-input/**
+globalStorage/**
+History/**
+snippets/**
+sync/**
+workspaceStorage/**
+custom-template.aux
+custom-template.log
+custom-template.out
+custom-template.pdf
+custom-template.synctex
+custom-template.tex.old
+custom-template.toc
+custom-vscode.pdf
