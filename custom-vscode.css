@@ -44,19 +44,19 @@
 /* Maple Mono NF CN */
 /* File Explorer Item Label */
 .monaco-tree-row {
-    font-family: 'Agave Nerd Font Mono', monospace !important;
+    /* font-family: 'Agave Nerd Font Mono', monospace !important; */
     font-size: 15px !important;
     font-weight: 400 !important;
     color: #c9b8b8 !important;
-    line-height: 1.5 !important; /* Added line-height property */
+    line-height: 1.7 !important; /* Added line-height property */
 }
 
 .monaco-list {
-    font-family: 'Maple Mono NF CN', monospace !important;
-    font-size: 13px !important;
+    font-family: 'consolas' !important;
+    font-size: 14px !important;
     font-weight: 400 !important;
     color: #c9b8b8 !important;
-    line-height: 1.5 !important; /* Added line-height property */
+    line-height: normal !important; /* Added line-height property */
 }
 
 /* .monaco-icon-label {
@@ -183,14 +183,14 @@
     background-image: linear-gradient(#3c3c50 0%, #2a2b38 100%) !important;
     backdrop-filter: blur(3px) !important;
     border-radius: 16px !important; /* Slightly reduced border radius */
-    max-width: 80% !important; /* Limit maximum width */
-    width: 600px !important; /* Set a default width */
+    max-width: 80% !important; 
+    width: 600px !important;
     margin: 0 auto !important; /* Center horizontally */
 }
 
 /* Add styles for better text handling */
 .quick-input-widget .monaco-list-row {
-    padding: 4px 6px !important; /* Reduce row padding */
+    padding: 0px 0px !important; /* Reduce row padding */
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
@@ -198,8 +198,8 @@
 
 /* Adjust input box spacing */
 .quick-input-widget .quick-input-header {
-    padding: 0 4px !important;
-    margin-bottom: 8px !important;
+    padding: 0 0px !important;
+    margin-bottom: 0px !important;
 }
 
 /* Remove background for lists */

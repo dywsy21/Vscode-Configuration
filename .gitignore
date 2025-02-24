@@ -1,9 +1,9 @@
-_minted-input/**
-globalStorage/**
-History/**
-snippets/**
-sync/**
-workspaceStorage/**
+_minted-input
+globalStorage
+History
+snippets
+sync
+workspaceStorage
 custom-template.aux
 custom-template.log
 custom-template.out
