@@ -253,6 +253,8 @@
     "p": false
   },
   "workbench.colorCustomizations": {
+    "tree.indentGuidesStroke": "#ffe56f",
+    "tree.inactiveIndentGuidesStroke": "#72dfeb",
     "gitDecoration.modifiedResourceForeground": "#74aeec",
     "gitDecoration.stageModifiedResourceForeground": "#74aeec",
     "gitDecoration.addedResourceForeground": "#7fd27fd9",
@@ -356,7 +358,8 @@
 
   "file:///C:/Users/Admin/AppData/Roaming/Code/User/custom.css",
   "file:///C:/Users/Admin/AppData/Roaming/Code/User/custom-vscode.css",
-  "file:///C:/Users/Admin/AppData/Roaming/Code/User/customvscode.css",
+  "file:///C:/Users/Admin/AppData/Roaming/Code/User/explorer.css",
+  "file:///C:/Users/Admin/AppData/Roaming/Code/User/panel.css",
   "file:///c:/Users/Admin/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
 ],
 "gitlens.currentLine.enabled": false,
@@ -514,7 +517,10 @@
 "zenMode.hideLineNumbers": false,
 "search.showLineNumbers": true,
 "terminal.integrated.tabs.location": "left",
+"workbench.tree.indent": 14,
 "workbench.colorCustomizations": {
+    "tree.indentGuidesStroke": "#ffe56f",
+    "tree.inactiveIndentGuidesStroke": "#72dfeb",
     "gitDecoration.modifiedResourceForeground": "#74aeec",
     "gitDecoration.stageModifiedResourceForeground": "#74aeec",
     "gitDecoration.addedResourceForeground": "#7fd27fd9",
