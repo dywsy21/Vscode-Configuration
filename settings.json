@@ -52,7 +52,15 @@
     {
       "before": ["<leader>", "g", "g"], // Open file in GitHub
       "commands": ["gitlens.openFileOnRemote"]
-    }
+    },
+    {
+        "before": ["K"], 
+        "after": ["6", "k"]
+    },
+    {
+        "before": ["J"], 
+        "after": ["6", "j"]
+    },
   ],
   "vim.normalModeKeyBindings": [
     {
@@ -102,14 +110,14 @@
       "after": ["a"]
     },
 
-    {
-      "before": ["<leader>", "e"],
-      "commands": [":bn"]
-    },
-    {
-      "before": ["<leader>", "w"],
-      "commands": [":bp"]
-    },
+    // {
+    //   "before": ["<leader>", "e"],
+    //   "commands": [":bn"]
+    // },
+    // {
+    //   "before": ["<leader>", "w"],
+    //   "commands": [":bp"]
+    // },
     {
       "before": ["<leader>", "d"],
       "after": ["<", "<"]
@@ -643,14 +651,11 @@
 "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
 },
-"verilog.ctags.path": "/usr/bin/ctags",
-"verilog.linting.verilator.useWSL": true,
+"verilog.ctags.path": "ctags",
 "[systemverilog]": {
     "editor.defaultFormatter": "eirikpre.systemverilog"
 },
-"verilog.languageServer.veribleVerilogLs.enabled": true,
 "verilog.linting.linter": "verilator",
-"verilog.languageServer.veribleVerilogLs.arguments": "--rules_config_search --rules=-no-tabs",
 "cmake.showConfigureWithDebuggerNotification": false,
 "C_Cpp.default.cppStandard": "c++23",
 "C_Cpp.default.cStandard": "c23",
@@ -661,6 +666,14 @@
 ],
 "workbench.statusBar.visible": false,
 "terminal.integrated.enablePersistentSessions": false,
+"verilog.linting.verilator.includePath": [
+    "/home/wsy/arch-2025/vsrc"
+],
+"systemverilog.compileOnSave": true,
+"systemverilog.launchConfigurationVerilator": "verilator --sv --lint-only --language 1800-2012 --Wall -I/home/wsy/arch-2025/vsrc",
+"systemverilog.compileOnOpen": true,
+"systemverilog.antlrVerification": true,
+"verilog.linting.verilator.useWSL": true,
 
 }
 
