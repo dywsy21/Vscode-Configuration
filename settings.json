@@ -23,7 +23,7 @@
   "editor.mouseWheelZoom": true,
   "terminal.integrated.mouseWheelScrollSensitivity": 2,
   "github.copilot.enable": {
-    "*": false,
+    "*": true,
     "plaintext": true,
     "markdown": true,
     "scminput": true
@@ -118,34 +118,34 @@
     //   "before": ["<leader>", "w"],
     //   "commands": [":bp"]
     // },
-    {
-      "before": ["<leader>", "d"],
-      "after": ["<", "<"]
-    },
+    // {
+    //   "before": ["<leader>", "d"],
+    //   "after": ["<", "<"]
+    // },
     {
         "before": ["g", "p", "d"],
         "commands": ["editor.action.peekDefinition"]
-      },
-      {
+    },
+    {
         "before": ["g", "h"],
         "commands": ["editor.action.showDefinitionPreviewHover"]
-      },
-      {
+    },
+    {
         "before": ["g", "i"],
         "commands": ["editor.action.goToImplementation"]
-      },
-      {
+    },
+    {
         "before": ["g", "p", "i"],
         "commands": ["editor.action.peekImplementation"]
-      },
-      {
+    },
+    {
         "before": ["g", "q"],
         "commands": ["editor.action.quickFix"]
-      },
-      {
+    },
+    {
         "before": ["g", "r"],
         "commands": ["editor.action.referenceSearch.trigger"]
-      },
+    },
     //   {
     //     "before": ["g", "t"],
     //     "commands": ["editor.action.goToTypeDefinition"]
@@ -245,7 +245,37 @@
       {
         "before": ["<leader>", "p"],
         "commands": ["workbench.action.toggleAuxiliaryBar"]
-      }
+      },
+    
+    {
+        "before": ["<leader>", "p", "d"],
+        "commands": ["editor.action.peekDefinition"]
+    },
+    {
+        "before": ["<leader>", "h"],
+        "commands": ["editor.action.showDefinitionPreviewHover"]
+    },
+    {
+        "before": ["<leader>", "i"],
+        "commands": ["editor.action.goToImplementation"]
+    },
+    {
+        "before": ["<leader>", "p", "i"],
+        "commands": ["editor.action.peekImplementation"]
+    },
+    {
+        "before": ["<leader>", "q"],
+        "commands": ["editor.action.quickFix"]
+    },
+    {
+        "before": ["<leader>", "r"],
+        "commands": ["editor.action.referenceSearch.trigger"]
+    },
+      {
+        "before": ["<leader>", "p", "t"],
+        "commands": ["editor.action.peekTypeDefinition"]
+      },
+ 
   ],
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -368,6 +398,7 @@
   "file:///C:/Users/Admin/AppData/Roaming/Code/User/custom-vscode.css",
   "file:///C:/Users/Admin/AppData/Roaming/Code/User/explorer.css",
   "file:///C:/Users/Admin/AppData/Roaming/Code/User/panel.css",
+  "file:///C:/Users/Admin/AppData/Roaming/Code/User/cursor.css",
   "file:///c:/Users/Admin/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
 ],
 "gitlens.currentLine.enabled": false,
@@ -653,7 +684,7 @@
 },
 "verilog.ctags.path": "ctags",
 "[systemverilog]": {
-    "editor.defaultFormatter": "eirikpre.systemverilog"
+    "editor.defaultFormatter": "mshr-h.veriloghdl"
 },
 "verilog.linting.linter": "verilator",
 "cmake.showConfigureWithDebuggerNotification": false,
@@ -674,6 +705,7 @@
 "systemverilog.compileOnOpen": true,
 "systemverilog.antlrVerification": true,
 "verilog.linting.verilator.useWSL": true,
+"verilog.languageServer.veribleVerilogLs.enabled": true,
 
 }
 

@@ -1,0 +1,46 @@
+/* Rainbow cursor for VS Code */
+.monaco-editor .cursor {
+    background: linear-gradient(to bottom, 
+        #ff0000, /* Red */
+        #ff9900, /* Orange */
+        #ffff00, /* Yellow */
+        #33cc33, /* Green */
+        #3399ff, /* Blue */
+        #9966ff, /* Purple */
+        #ff66ff  /* Pink */
+    ) !important;
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.5) !important; /* Add glow */
+    border: none !important;
+    transition: all 0.1s ease !important; /* Smooth changes */
+    animation: rainbow-shift 2s linear infinite !important; /* Shifting animation */
+}
+
+/* Animation for shifting rainbow colors */
+@keyframes rainbow-shift {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+/* Ensure cursor stays visible on all backgrounds */
+.monaco-editor .cursor-blink {
+    opacity: 0.8 !important;
+}
+
+/* Adjust cursor width for better visibility */
+.monaco-editor .cursor, 
+.monaco-editor .cursor-blink {
+    width: 2px !important; /* Slightly thicker cursor */
+}
+
+/* Style cursor in other contexts (like input fields) */
+.cursor, 
+.inputarea-cursor {
+    background: linear-gradient(to bottom, 
+        #ff0000, #ff9900, #ffff00, #33cc33, #3399ff, #9966ff, #ff66ff
+    ) !important;
+    animation: rainbow-shift 2s linear infinite !important;
+}

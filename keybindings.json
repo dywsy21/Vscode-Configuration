@@ -417,26 +417,6 @@
         "command": "-workbench.action.openEditorAtIndex1"
     },
     {
-        "key": "alt+up",
-        "command": "editor.action.insertCursorAbove",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+alt+up",
-        "command": "-editor.action.insertCursorAbove",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "alt+down",
-        "command": "editor.action.insertCursorBelow",
-        "when": "editorTextFocus"
-    },
-    {
-        "key": "ctrl+alt+down",
-        "command": "-editor.action.insertCursorBelow",
-        "when": "editorTextFocus"
-    },
-    {
         "key": "ctrl+alt+up",
         "command": "editor.action.moveLinesUpAction",
         "when": "editorTextFocus && !editorReadonly"
@@ -685,6 +665,26 @@
         "command": "runCommands",
         "args": { "commands": ["list.focusUp", "list.focusUp",  "list.focusUp",  "list.focusUp",  "list.focusUp"] },
         "when": "explorerViewletVisible && filesExplorerFocus && listFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "alt+up",
+        "command": "smartmulticursor.insertCursorAbove",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+up",
+        "command": "-smartmulticursor.insertCursorAbove",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+down",
+        "command": "smartmulticursor.insertCursorBelow",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+down",
+        "command": "-smartmulticursor.insertCursorBelow",
+        "when": "editorTextFocus"
     }
 
     ]
