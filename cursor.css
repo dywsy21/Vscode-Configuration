@@ -1,4 +1,16 @@
-/* Rainbow cursor for VS Code */
+/* Rainbow cursor for VS Code with proper Vim mode support */
+
+/* Animation for rainbow shifting effect */
+@keyframes rainbow-shift {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+/* Base rainbow gradient for all cursors */
 .monaco-editor .cursor {
     background: linear-gradient(to bottom, 
         #ff0000, /* Red */
@@ -9,38 +21,78 @@
         #9966ff, /* Purple */
         #ff66ff  /* Pink */
     ) !important;
-    box-shadow: 0 0 3px rgba(255, 255, 255, 0.5) !important; /* Add glow */
+    background-size: 100% 400% !important;
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.5) !important;
     border: none !important;
-    transition: all 0.1s ease !important; /* Smooth changes */
-    animation: rainbow-shift 2s linear infinite !important; /* Shifting animation */
+    animation: rainbow-shift 2s linear infinite !important;
 }
 
-/* Animation for shifting rainbow colors */
-@keyframes rainbow-shift {
-    0% {
-        background-position: 0% 0%;
-    }
-    100% {
-        background-position: 0% 100%;
-    }
+/* Regular line cursor (for insert mode) */
+.monaco-editor .cursor:not(.block) {
+    width: 2px !important;
 }
 
-/* Ensure cursor stays visible on all backgrounds */
+/* Block cursor style (for normal mode) - override default styles */
+.monaco-editor .cursor.block {
+    width: 0.9ch !important; /* Block width matches character width */
+    height: 1.2em !important; /* Set height to match line height */
+    background: linear-gradient(to bottom, 
+        #ff0000, #ff9900, #ffff00, #33cc33, #3399ff, #9966ff, #ff66ff
+    ) !important;
+    background-size: 100% 400% !important;
+    opacity: 0.7 !important; /* Semi-transparent so you can see text */
+    animation: rainbow-shift 2s linear infinite !important;
+}
+
+/* Make sure cursor stays visible when blinking */
 .monaco-editor .cursor-blink {
     opacity: 0.8 !important;
 }
 
-/* Adjust cursor width for better visibility */
-.monaco-editor .cursor, 
-.monaco-editor .cursor-blink {
-    width: 2px !important; /* Slightly thicker cursor */
-}
-
-/* Style cursor in other contexts (like input fields) */
-.cursor, 
-.inputarea-cursor {
+/* Style other input field cursors */
+.cursor:not(.block), 
+.inputarea-cursor:not(.block) {
     background: linear-gradient(to bottom, 
         #ff0000, #ff9900, #ffff00, #33cc33, #3399ff, #9966ff, #ff66ff
     ) !important;
+    background-size: 100% 400% !important;
     animation: rainbow-shift 2s linear infinite !important;
+}
+
+/* Specific Vim mode cursor styles - ensure proper dimensions */
+.vim-normal-mode .cursor,
+.cursor.vim-mode.normal-mode,
+.monaco-editor.vim-mode .cursor.normal-mode {
+    width: 0.9ch !important;
+    height: 1.2em !important;
+    opacity: 0.7 !important;
+}
+
+/* Additional classes used by different versions of VS Code Vim */
+.monaco-editor .cursors-layer.cursor-block-style .cursor,
+.monaco-editor .cursors-layer .cursor.block {
+    width: 1ch !important;
+    height: 1.5em !important;
+    background: linear-gradient(to bottom, 
+        #ff0000, #ff9900, #ffff00, #33cc33, #3399ff, #9966ff, #ff66ff
+    ) !important;
+    background-size: 100% 400% !important;
+    opacity: 0.7 !important;
+    animation: rainbow-shift 2s linear infinite !important;
+}
+
+/* Override for any inline styles that might be applied */
+.monaco-editor .cursor[style*="width"] {
+    width: var(--override-cursor-width, 2px) !important;
+}
+
+/* Set variable for block cursor when in vim normal mode */
+.monaco-editor.vim-mode.normal-mode {
+    --override-cursor-width: 1ch !important;
+}
+
+/* Make sure cursor has correct z-index */
+.monaco-editor .cursor,
+.monaco-editor .cursors-layer {
+    z-index: 100 !important;
 }
