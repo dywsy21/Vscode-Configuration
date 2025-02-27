@@ -13,6 +13,19 @@
     }
 }
 
+/* New animation for smooth hue rotation */
+@keyframes rainbow-hue {
+    0% {
+        filter: hue-rotate(0deg) brightness(1.2);
+    }
+    50% {
+        filter: hue-rotate(180deg) brightness(1.4);
+    }
+    100% {
+        filter: hue-rotate(360deg) brightness(1.2);
+    }
+}
+
 /* Base rainbow gradient for all cursors */
 .monaco-editor .cursor {
     background: linear-gradient(135deg, 
@@ -28,8 +41,10 @@
     background-size: 200% 200% !important;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.8) !important;
     border: none !important;
-    animation: rainbow-shift 3s ease infinite !important;
-    filter: brightness(1.2) !important;
+    animation: 
+        rainbow-shift 3s ease infinite,
+        rainbow-hue 5s linear infinite !important;
+    filter: none !important; /* Remove static filter as it's now animated */
 }
 
 /* Regular line cursor (for insert mode) */
@@ -53,7 +68,9 @@
     ) !important;
     background-size: 200% 200% !important;
     opacity: 0.9 !important; /* Fixed from 0 to 0.9 */
-    animation: rainbow-shift 3s ease infinite !important;
+    animation: 
+        rainbow-shift 3s ease infinite,
+        rainbow-hue 5s linear infinite !important;
     filter: brightness(1.2) !important;
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.5) !important;
 }
@@ -77,7 +94,9 @@
         #ff3333 100%
     ) !important;
     background-size: 200% 200% !important;
-    animation: rainbow-shift 3s ease infinite !important;
+    animation: 
+        rainbow-shift 3s ease infinite,
+        rainbow-hue 5s linear infinite !important;
     filter: brightness(1.2) !important;
 }
 
@@ -107,7 +126,9 @@
     ) !important;
     background-size: 200% 200% !important;
     opacity: 0.9 !important; /* Increased from 0.7 */
-    animation: rainbow-shift 3s ease infinite !important;
+    animation: 
+        rainbow-shift 3s ease infinite,
+        rainbow-hue 5s linear infinite !important;
     filter: brightness(1.2) !important;
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.5) !important;
 }

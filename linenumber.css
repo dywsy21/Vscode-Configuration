@@ -1,0 +1,35 @@
+/* Rainbow line number for VS Code - Simplified Approach */
+
+/* Animation for rainbow shifting effect */
+@keyframes rainbow-shift-line {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Target classes that VS Code uses for current line */
+.monaco-editor .margin-view-overlays .current-line .line-numbers,
+.monaco-editor .margin-view-overlays .current-line-margin .line-numbers,
+.monaco-editor .margin-view-overlays .line-numbers.cursor-line-number {
+    color: transparent !important;
+    background: linear-gradient(to right,
+        #ff3333, #ffb700, #ffff33, #4dff4d, #33bbff, #bb66ff, #ff99ff, #ff3333
+    ) !important;
+    background-size: 200% auto !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    animation: rainbow-shift-line 3s linear infinite !important;
+    font-weight: bold !important;
+}
+
+/* Remove mouse tracking elements */
+.monaco-editor .margin::after {
+    display: none !important;
+}
