@@ -690,7 +690,6 @@
 "github.copilot.chat.editor.temporalContext.enabled": true,
 "rust-analyzer.inlayHints.genericParameterHints.type.enable": true,
 "python.analysis.generateWithTypeAnnotation": true,
-"github.copilot.nextEditSuggestions.enabled": true,
 "github.copilot.chat.languageContext.typescript.enabled": true,
 "animations.CursorAnimation": true,
 "animations.Auto-Install": false,
@@ -722,6 +721,8 @@
 "verilog.languageServer.veribleVerilogLs.enabled": true,
 "window.newWindowDimensions": "maximized",
 "workbench.panel.opensMaximized": "never",
-
+"workbench.statusBar.visible": false,
+"editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+"workbench.editor.preferHistoryBasedLanguageDetection": true,
+"workbench.hover.delay": 300,
 }
-
