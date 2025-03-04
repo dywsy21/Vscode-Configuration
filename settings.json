@@ -304,6 +304,14 @@
     "<S-Left>": true,
     "<S-Right>": true,
   },
+    // 启用括号对着色
+    "editor.bracketPairColorization.enabled": true,
+  
+    // 启用活动括号对高亮
+    "editor.guides.bracketPairs": true,
+    
+    // 高亮模式："active"表示仅高亮光标所在的括号对
+    "editor.guides.bracketPairsHorizontal": "active",
   "workbench.colorCustomizations": {
     "tree.indentGuidesStroke": "#ffe56f",
     "tree.inactiveIndentGuidesStroke": "#72dfeb",
@@ -318,7 +326,19 @@
     "statusBar.noFolderBackground": "#005f5f",
     "statusBar.debuggingBackground": "#005f5f",
     "statusBar.foreground": "#ffffff",
-    "statusBar.debuggingForeground": "#ffffff"
+    "statusBar.debuggingForeground": "#ffffff",
+    "editorBracketPairGuide.activeBackground1": "#ff9d00",
+    "editorBracketPairGuide.activeBackground2": "#ffe56f",
+    "editorBracketPairGuide.activeBackground3": "#00ffff",
+    "editorBracketPairGuide.activeBackground4": "#00ff00",
+    "editorBracketHighlight.foreground1": "#ffd700",
+    "editorBracketHighlight.foreground2": "#da70d6",
+    "editorBracketHighlight.foreground3": "#87cefa",
+    "editorBracketHighlight.foreground4": "#7cfc00",
+    "editorBracketHighlight.foreground5": "#ff8c00",
+    "editorBracketHighlight.foreground6": "#ff69b4",
+    "editorBracketHighlight.unexpectedBracket.foreground": "#ff0000",
+    "editorBracketMatch.background": "#ffefaa"
 },
   "vim.foldfix": true,
   "vim.gdefault": true,
@@ -572,17 +592,17 @@
 "search.showLineNumbers": true,
 "terminal.integrated.tabs.location": "left",
 "workbench.tree.indent": 14,
-"workbench.colorCustomizations": {
-    "tree.indentGuidesStroke": "#ffe56f",
-    "tree.inactiveIndentGuidesStroke": "#72dfeb",
-    "gitDecoration.modifiedResourceForeground": "#74aeec",
-    "gitDecoration.stageModifiedResourceForeground": "#74aeec",
-    "gitDecoration.addedResourceForeground": "#7fd27fd9",
-    "gitDecoration.renamedResourceForeground": "#74aeec",
-    "gitDecoration.untrackedResourceForeground": "#f7aeae",
-    "gitDecoration.ignoredResourceForeground": "#ffffff3b",
-    "tab.activeBorderTop": "#0095ff",
-},
+// "workbench.colorCustomizations": {
+//     "tree.indentGuidesStroke": "#ffe56f",
+//     "tree.inactiveIndentGuidesStroke": "#72dfeb",
+//     "gitDecoration.modifiedResourceForeground": "#74aeec",
+//     "gitDecoration.stageModifiedResourceForeground": "#74aeec",
+//     "gitDecoration.addedResourceForeground": "#7fd27fd9",
+//     "gitDecoration.renamedResourceForeground": "#74aeec",
+//     "gitDecoration.untrackedResourceForeground": "#f7aeae",
+//     "gitDecoration.ignoredResourceForeground": "#ffffff3b",
+//     "tab.activeBorderTop": "#0095ff",
+// },
 "diffEditor.experimental.showMoves": true,
 "typescript.preferences.includePackageJsonAutoImports": "on",
 "typescript.preferences.preferTypeOnlyAutoImports": true,
@@ -721,8 +741,8 @@
 "verilog.languageServer.veribleVerilogLs.enabled": true,
 "window.newWindowDimensions": "maximized",
 "workbench.panel.opensMaximized": "never",
-"workbench.statusBar.visible": false,
 "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
 "workbench.editor.preferHistoryBasedLanguageDetection": true,
 "workbench.hover.delay": 300,
+"workbench.statusBar.visible": false,
 }
