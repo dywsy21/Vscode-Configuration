@@ -1,748 +1,701 @@
 {
-  "files.autoSave": "afterDelay",
-"editor.fontSize": 22,
-  "[rust]": {
-    "editor.defaultFormatter": "jinxdash.prettier-rust"
-  },
-  "editor.lineHeight": 1.6,
-  "editor.cursorBlinking": "smooth",
-  "editor.cursorSmoothCaretAnimation": "on",
-  "editor.cursorSurroundingLines": 8,
-  "diffEditor.codeLens": true,
-  "editor.hover.delay": 200,
-  "files.autoSaveDelay": 0,
-  "aide.readClipboardImage": true,
-  "aide.openaiKey": "sk-OTkxJG2LUxtxmQ2WA261DaD70a6e4d3f8dF884Fb653d046c",
-  "aide.openaiBaseUrl": "https://api.zhiyunai168.com/v1",
-  "glassit.alpha": 245,
-  "aide.aiCommand": "aider --openai-api-base https://api.zhiyunai168.com/v1 --vim #{filesRelativePath}",
-  "terminal.integrated.defaultProfile.linux": "zsh",
-  "terminal.integrated.fontSize": 19,
-  "terminal.integrated.mouseWheelZoom": true,
-  "editor.mouseWheelScrollSensitivity": 2.8,
-  "editor.mouseWheelZoom": true,
-  "terminal.integrated.mouseWheelScrollSensitivity": 2,
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": false,
-    // "markdown": true,
-    "scminput": false
-},
-  "[markdown]": {
-    "editor.quickSuggestions": {
-      "other": true,
-      "comments": true,
-      "strings": true
-    }
-  },
-  "errorLens.enabled": true,
-  "vim.camelCaseMotion.enable": true,
-  "vim.commandLineModeKeyBindings": [],
-  "vim.easymotion": true,
-  "vim.enableNeovim": true,
-  "vim.highlightedyank.enable": true,
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["<C-v>"],
-      "commands": ["editor.action.clipboardPasteAction"]
-    }
-  ],
-  "vim.leader": "<space>",
-  "vim.visualModeKeyBindings": [
-    {
-      "before": ["<leader>", "g", "g"], // Open file in GitHub
-      "commands": ["gitlens.openFileOnRemote"]
+    "files.autoSave": "afterDelay",
+    "editor.fontSize": 22,
+    "[rust]": {
+        "editor.defaultFormatter": "jinxdash.prettier-rust"
     },
-    {
-        "before": ["K"], 
-        "after": ["6", "k"]
+    "editor.lineHeight": 1.6,
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorSurroundingLines": 8,
+    "diffEditor.codeLens": true,
+    "editor.hover.delay": 200,
+    "files.autoSaveDelay": 0,
+    "aide.readClipboardImage": true,
+    "aide.openaiKey": "sk-OTkxJG2LUxtxmQ2WA261DaD70a6e4d3f8dF884Fb653d046c",
+    "aide.openaiBaseUrl": "https://api.zhiyunai168.com/v1",
+    "glassit.alpha": 245,
+    "aide.aiCommand": "aider --openai-api-base https://api.zhiyunai168.com/v1 --vim #{filesRelativePath}",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.fontSize": 19,
+    "terminal.integrated.mouseWheelZoom": true,
+    "editor.mouseWheelScrollSensitivity": 2.8,
+    "editor.mouseWheelZoom": true,
+    "terminal.integrated.mouseWheelScrollSensitivity": 2,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        // "markdown": true,
+        "scminput": false
     },
-    {
-        "before": ["J"], 
-        "after": ["6", "j"]
+    "[markdown]": {
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": true,
+            "strings": true
+        }
     },
-  ],
-  "vim.normalModeKeyBindings": [
-    {
-      "before": ["4"],
-      "after": ["$"]
-    },
-    {
-      "before": ["5"],
-      "after": ["%"]
-    },
-    // {
-    //   "before": ["g", "F"],
-    //   "after": ["f"]
-    // },
-    // {
-    //   "before": ["F"],
-    //   "after": ["?"]
-    // },
-    // {
-    //   "before": ["f"],
-    //   "after": ["/"]
-    // },
-    {
-      "before": ["<leader>", "f"],
-      "commands": [":nohlsearch"]
-    },
+    "errorLens.enabled": true,
+    "vim.camelCaseMotion.enable": true,
+    "vim.commandLineModeKeyBindings": [],
+    "vim.easymotion": true,
+    "vim.enableNeovim": true,
+    "vim.highlightedyank.enable": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["<C-v>"],
+            "commands": ["editor.action.clipboardPasteAction"]
+        }
+    ],
+    "vim.leader": "<space>",
+    "vim.visualModeKeyBindings": [
+        {
+            "before": ["<leader>", "g", "g"], // Open file in GitHub
+            "commands": ["gitlens.openFileOnRemote"]
+        },
+        {
+            "before": ["K"],
+            "after": ["6", "k"]
+        },
+        {
+            "before": ["J"],
+            "after": ["6", "j"]
+        }
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["4"],
+            "after": ["$"]
+        },
+        {
+            "before": ["5"],
+            "after": ["%"]
+        },
+        // {
+        //   "before": ["g", "F"],
+        //   "after": ["f"]
+        // },
+        // {
+        //   "before": ["F"],
+        //   "after": ["?"]
+        // },
+        // {
+        //   "before": ["f"],
+        //   "after": ["/"]
+        // },
+        {
+            "before": ["<leader>", "f"],
+            "commands": [":nohlsearch"]
+        },
 
-    {
-      "before": ["<Enter>"],
-      "after": ["n"]
-    },
-    {
-      "before": ["<leader>", "q"],
-      "commands": [":q"]
-    },
-    {
-      "before": ["J"],
-      "after": ["6", "j"]
-    },
-    {
-      "before": ["K"],
-      "after": ["6", "k"]
-    },
+        {
+            "before": ["<Enter>"],
+            "after": ["n"]
+        },
+        {
+            "before": ["<leader>", "q"],
+            "commands": [":q"]
+        },
+        {
+            "before": ["J"],
+            "after": ["6", "j"]
+        },
+        {
+            "before": ["K"],
+            "after": ["6", "k"]
+        },
 
-    {
-      "before": ["<Tab>"],
-      "after": ["a"]
-    },
+        {
+            "before": ["<Tab>"],
+            "after": ["a"]
+        },
 
-    // {
-    //   "before": ["<leader>", "e"],
-    //   "commands": [":bn"]
-    // },
-    // {
-    //   "before": ["<leader>", "w"],
-    //   "commands": [":bp"]
-    // },
-    // {
-    //   "before": ["<leader>", "d"],
-    //   "after": ["<", "<"]
-    // },
-    {
-        "before": ["g", "p", "d"],
-        "commands": ["editor.action.peekDefinition"]
+        // {
+        //   "before": ["<leader>", "e"],
+        //   "commands": [":bn"]
+        // },
+        // {
+        //   "before": ["<leader>", "w"],
+        //   "commands": [":bp"]
+        // },
+        // {
+        //   "before": ["<leader>", "d"],
+        //   "after": ["<", "<"]
+        // },
+        {
+            "before": ["g", "p", "d"],
+            "commands": ["editor.action.peekDefinition"]
+        },
+        {
+            "before": ["g", "h"],
+            "commands": ["editor.action.showDefinitionPreviewHover"]
+        },
+        {
+            "before": ["g", "i"],
+            "commands": ["editor.action.goToImplementation"]
+        },
+        {
+            "before": ["g", "p", "i"],
+            "commands": ["editor.action.peekImplementation"]
+        },
+        {
+            "before": ["g", "q"],
+            "commands": ["editor.action.quickFix"]
+        },
+        {
+            "before": ["g", "r"],
+            "commands": ["editor.action.referenceSearch.trigger"]
+        },
+        //   {
+        //     "before": ["g", "t"],
+        //     "commands": ["editor.action.goToTypeDefinition"]
+        //   },
+        {
+            "before": ["g", "p", "t"],
+            "commands": ["editor.action.peekTypeDefinition"]
+        },
+        {
+            "before": ["<S-Left>"],
+            "commands": [":tabprevious"]
+        },
+        {
+            "before": ["<S-Right>"],
+            "commands": [":tabnext"]
+        },
+        {
+            "before": ["<C-Left>"],
+            "commands": [":tabprevious"]
+        },
+        {
+            "before": ["<C-Right>"],
+            "commands": [":tabnext"]
+        },
+        {
+            "before": ["<leader>", "e"],
+            "commands": ["workbench.view.explorer"]
+        },
+        {
+            "before": ["H"], // Focus previous tab at the left
+            "commands": ["workbench.action.previousEditor"]
+        },
+        {
+            "before": ["L"], // Focus next tab at the right
+            "commands": ["workbench.action.nextEditor"]
+        },
+        {
+            "before": ["Q"], // Close current tab
+            "after": ["<C-w>", "q"]
+        },
+        {
+            "before": ["_"], // Split tab vertically
+            "after": ["<C-w>", "v"]
+        },
+        {
+            "before": ["|"], // Split tab horizontally
+            "after": ["<C-w>", "s"]
+        },
+        {
+            "before": ["<C-h>"], // Focus split window at left
+            "commands": ["workbench.action.focusLeftGroup"]
+        },
+        {
+            "before": ["<C-j>"], // Focus split window at right
+            "commands": ["workbench.action.focusBelowGroup"]
+        },
+        {
+            "before": ["<C-k>"], // Focus split window at above
+            "commands": ["workbench.action.focusAboveGroup"]
+        },
+        {
+            "before": ["<C-l>"], // Focus split window at below
+            "commands": ["workbench.action.focusRightGroup"]
+        },
+        {
+            "before": ["<leader>", "f"], // Search text
+            "commands": ["workbench.action.findInFiles"]
+        },
+        {
+            "before": ["<leader>", "s"], // Search symbol
+            "commands": ["workbench.action.showAllSymbols"]
+        },
+        {
+            "before": ["<leader>", "g", "p"], // Peek Git diff for the changed line
+            "commands": ["editor.action.dirtydiff.next"]
+        },
+        {
+            "before": ["<leader>", "g", "r"], // Revert hunk
+            "commands": ["git.revertSelectedRanges"]
+        },
+        {
+            "before": ["<leader>", "g", "j"], // Jump to next Git change
+            "commands": ["workbench.action.editor.nextChange"]
+        },
+        {
+            "before": ["<leader>", "g", "k"], // Jump to previous Git change
+            "commands": ["workbench.action.editor.previousChange"]
+        },
+        {
+            "before": ["<leader>", "g", "g"], // Open file in GitHub
+            "commands": ["gitlens.openFileOnRemote"]
+        },
+        {
+            "before": ["<leader>", "o"],
+            "commands": ["workbench.action.quickOpen"]
+        },
+        {
+            "before": ["<leader>", "0"],
+            "commands": ["workbench.action.toggleAuxiliaryBar"]
+        },
+
+        {
+            "before": ["<leader>", "p", "d"],
+            "commands": ["editor.action.peekDefinition"]
+        },
+        {
+            "before": ["<leader>", "h"],
+            "commands": ["editor.action.showDefinitionPreviewHover"]
+        },
+        {
+            "before": ["<leader>", "i"],
+            "commands": ["editor.action.goToImplementation"]
+        },
+        {
+            "before": ["<leader>", "p", "i"],
+            "commands": ["editor.action.peekImplementation"]
+        },
+        {
+            "before": ["<leader>", "r"],
+            "commands": ["editor.action.referenceSearch.trigger"]
+        },
+        {
+            "before": ["<leader>", "p", "t"],
+            "commands": ["editor.action.peekTypeDefinition"]
+        }
+    ],
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    {
-        "before": ["g", "h"],
-        "commands": ["editor.action.showDefinitionPreviewHover"]
+    "vim.searchMatchTextColor": "yellow",
+    "vim.searchMatchColor": "yellow",
+    "vim.searchHighlightColor": "yellow",
+    "vim.sneak": true,
+    "vim.sneakUseIgnorecaseAndSmartcase": true,
+    "vim.statusBarColorControl": true,
+    "vim.useSystemClipboard": true,
+    "vim.handleKeys": {
+        "p": false,
+        "<S-Left>": true,
+        "<S-Right>": true
     },
-    {
-        "before": ["g", "i"],
-        "commands": ["editor.action.goToImplementation"]
-    },
-    {
-        "before": ["g", "p", "i"],
-        "commands": ["editor.action.peekImplementation"]
-    },
-    {
-        "before": ["g", "q"],
-        "commands": ["editor.action.quickFix"]
-    },
-    {
-        "before": ["g", "r"],
-        "commands": ["editor.action.referenceSearch.trigger"]
-    },
-    //   {
-    //     "before": ["g", "t"],
-    //     "commands": ["editor.action.goToTypeDefinition"]
-    //   },
-      {
-        "before": ["g", "p", "t"],
-        "commands": ["editor.action.peekTypeDefinition"]
-      },
-       {
-        "before": [
-          "<S-Left>"
-        ],
-        "commands": [
-          ":tabprevious"
-        ]
-      },
-      {
-        "before": [
-          "<S-Right>"
-        ],
-        "commands": [
-          ":tabnext"
-        ]
-      },
-      {
-        "before": [
-          "<C-Left>"
-        ],
-        "commands": [
-          ":tabprevious"
-        ]
-      },
-      {
-        "before": [
-          "<C-Right>"
-        ],
-        "commands": [
-          ":tabnext"
-        ]
-      },
-    {
-         "before": ["<leader>", "e"],
-         "commands": ["workbench.view.explorer"]
-    },
-    {
-        "before": ["H"], // Focus previous tab at the left
-        "commands": ["workbench.action.previousEditor"]
-      },
-      {
-        "before": ["L"], // Focus next tab at the right
-        "commands": ["workbench.action.nextEditor"]
-      },
-      {
-        "before": ["Q"], // Close current tab
-        "after": ["<C-w>", "q"]
-      },
-    {
-      "before": ["_"], // Split tab vertically
-      "after": ["<C-w>", "v"]
-    },
-    {
-      "before": ["|"], // Split tab horizontally
-      "after": ["<C-w>", "s"]
-    },
-    {
-      "before": ["<C-h>"], // Focus split window at left
-      "commands": ["workbench.action.focusLeftGroup"]
-    },
-    {
-      "before": ["<C-j>"], // Focus split window at right
-      "commands": ["workbench.action.focusBelowGroup"]
-    },
-    {
-      "before": ["<C-k>"], // Focus split window at above
-      "commands": ["workbench.action.focusAboveGroup"]
-    },
-    {
-      "before": ["<C-l>"], // Focus split window at below
-      "commands": ["workbench.action.focusRightGroup"]
-    },
-    {
-        "before": ["<leader>", "f"], // Search text
-        "commands": ["workbench.action.findInFiles"]
-    },
-    {
-        "before": ["<leader>", "s"], // Search symbol
-        "commands": ["workbench.action.showAllSymbols"]
-      },
-      {
-        "before": ["<leader>", "g", "p"], // Peek Git diff for the changed line
-        "commands": ["editor.action.dirtydiff.next"]
-      },
-      {
-        "before": ["<leader>", "g", "r"], // Revert hunk
-        "commands": ["git.revertSelectedRanges"]
-      },
-      {
-        "before": ["<leader>", "g", "j"], // Jump to next Git change
-        "commands": ["workbench.action.editor.nextChange"]
-      },
-      {
-        "before": ["<leader>", "g", "k"], // Jump to previous Git change
-        "commands": ["workbench.action.editor.previousChange"]
-      },
-      {
-        "before": ["<leader>", "g", "g"], // Open file in GitHub
-        "commands": ["gitlens.openFileOnRemote"]
-      },
-      {
-        "before": ["<leader>", "o"],
-        "commands": ["workbench.action.quickOpen"]
-      },
-      {
-        "before": ["<leader>", "0"],
-        "commands": ["workbench.action.toggleAuxiliaryBar"]
-      },
-    
-    {
-        "before": ["<leader>", "p", "d"],
-        "commands": ["editor.action.peekDefinition"]
-    },
-    {
-        "before": ["<leader>", "h"],
-        "commands": ["editor.action.showDefinitionPreviewHover"]
-    },
-    {
-        "before": ["<leader>", "i"],
-        "commands": ["editor.action.goToImplementation"]
-    },
-    {
-        "before": ["<leader>", "p", "i"],
-        "commands": ["editor.action.peekImplementation"]
-    },
-    {
-        "before": ["<leader>", "r"],
-        "commands": ["editor.action.referenceSearch.trigger"]
-    },
-      {
-        "before": ["<leader>", "p", "t"],
-        "commands": ["editor.action.peekTypeDefinition"]
-      },
- 
-  ],
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "vim.searchMatchTextColor": "yellow",
-  "vim.searchMatchColor": "yellow",
-  "vim.searchHighlightColor": "yellow",
-  "vim.sneak": true,
-  "vim.sneakUseIgnorecaseAndSmartcase": true,
-  "vim.statusBarColorControl": true,
-  "vim.useSystemClipboard": true,
-  "vim.handleKeys": {
-    "p": false,
-    "<S-Left>": true,
-    "<S-Right>": true,
-  },
     // 启用括号对着色
     "editor.bracketPairColorization.enabled": true,
-  
+
     // 启用活动括号对高亮
     "editor.guides.bracketPairs": true,
-    
+
     // 高亮模式："active"表示仅高亮光标所在的括号对
     "editor.guides.bracketPairsHorizontal": "active",
-  "workbench.colorCustomizations": {
-    "tree.indentGuidesStroke": "#ffe56f",
-    "tree.inactiveIndentGuidesStroke": "#72dfeb",
-    "gitDecoration.modifiedResourceForeground": "#74aeec",
-    "gitDecoration.stageModifiedResourceForeground": "#74aeec",
-    "gitDecoration.addedResourceForeground": "#7fd27fd9",
-    "gitDecoration.renamedResourceForeground": "#74aeec",
-    "gitDecoration.untrackedResourceForeground": "#f7aeae",
-    "gitDecoration.ignoredResourceForeground": "#ffffff3b",
-    "tab.activeBorderTop": "#0095ff",
-    "statusBar.background": "#005f5f",
-    "statusBar.noFolderBackground": "#005f5f",
-    "statusBar.debuggingBackground": "#005f5f",
-    "statusBar.foreground": "#ffffff",
-    "statusBar.debuggingForeground": "#ffffff",
-    "editorBracketPairGuide.activeBackground1": "#ff9d00",
-    "editorBracketPairGuide.activeBackground2": "#ffe56f",
-    "editorBracketPairGuide.activeBackground3": "#00ffff",
-    "editorBracketPairGuide.activeBackground4": "#00ff00",
-    "editorBracketHighlight.foreground1": "#ffd700",
-    "editorBracketHighlight.foreground2": "#da70d6",
-    "editorBracketHighlight.foreground3": "#87cefa",
-    "editorBracketHighlight.foreground4": "#7cfc00",
-    "editorBracketHighlight.foreground5": "#ff8c00",
-    "editorBracketHighlight.foreground6": "#ff69b4",
-    "editorBracketHighlight.unexpectedBracket.foreground": "#ff0000",
-    "editorBracketMatch.background": "#ffefaa"
-},
-  "vim.foldfix": true,
-  "vim.gdefault": true,
-  "vim.hlsearch": true,
-"vim.searchHighlightTextColor": "black",
-  "explorer.confirmDragAndDrop": false,
-  "workbench.settings.applyToAllProfiles": [
-    "workbench.colorCustomizations"
-  ],
-  "markdown-pdf.styles": ["E:\\configs\\markdown.css"],
-
-  "terminal.integrated.enableMultiLinePasteWarning": "never",
-  "explorer.confirmDelete": false,
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "WrapperSnippets.wrappers": [
-
-    {
-      "key": "pro",
-      "wrap_template": "Test::new({})",
-      "fileSuffix": "rs"
+    "workbench.colorCustomizations": {
+        "tree.indentGuidesStroke": "#ffe56f",
+        "tree.inactiveIndentGuidesStroke": "#72dfeb",
+        "gitDecoration.modifiedResourceForeground": "#74aeec",
+        "gitDecoration.stageModifiedResourceForeground": "#74aeec",
+        "gitDecoration.addedResourceForeground": "#7fd27fd9",
+        "gitDecoration.renamedResourceForeground": "#74aeec",
+        "gitDecoration.untrackedResourceForeground": "#f7aeae",
+        "gitDecoration.ignoredResourceForeground": "#ffffff3b",
+        "tab.activeBorderTop": "#0095ff",
+        "statusBar.background": "#5f0000",
+        "statusBar.noFolderBackground": "#5f0000",
+        "statusBar.debuggingBackground": "#5f0000",
+        "statusBar.foreground": "#ffffff",
+        "statusBar.debuggingForeground": "#ffffff",
+        "editorBracketPairGuide.activeBackground1": "#ff9d00",
+        "editorBracketPairGuide.activeBackground2": "#ffe56f",
+        "editorBracketPairGuide.activeBackground3": "#00ffff",
+        "editorBracketPairGuide.activeBackground4": "#00ff00",
+        "editorBracketHighlight.foreground1": "#ffd700",
+        "editorBracketHighlight.foreground2": "#da70d6",
+        "editorBracketHighlight.foreground3": "#87cefa",
+        "editorBracketHighlight.foreground4": "#7cfc00",
+        "editorBracketHighlight.foreground5": "#ff8c00",
+        "editorBracketHighlight.foreground6": "#ff69b4",
+        "editorBracketHighlight.unexpectedBracket.foreground": "#ff0000",
+        "editorBracketMatch.background": "#ffefaa"
     },
-    {
-      "key": "mutex",
-      "wrap_template": "std::sync::Mutex::new({})",
-      "fileSuffix": "rs"
+    "vim.foldfix": true,
+    "vim.gdefault": true,
+    "vim.hlsearch": true,
+    "vim.searchHighlightTextColor": "black",
+    "explorer.confirmDragAndDrop": false,
+    "workbench.settings.applyToAllProfiles": ["workbench.colorCustomizations"],
+    "markdown-pdf.styles": ["E:\\configs\\markdown.css"],
+
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "explorer.confirmDelete": false,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    {
-      "key": "option",
-      "wrap_template": "Option<{}>",
-      "fileSuffix": "rs"
+    "WrapperSnippets.wrappers": [
+        {
+            "key": "pro",
+            "wrap_template": "Test::new({})",
+            "fileSuffix": "rs"
+        },
+        {
+            "key": "mutex",
+            "wrap_template": "std::sync::Mutex::new({})",
+            "fileSuffix": "rs"
+        },
+        {
+            "key": "option",
+            "wrap_template": "Option<{}>",
+            "fileSuffix": "rs"
+        },
+        {
+            "key": "ok",
+            "wrap_template": "Ok({})",
+            "fileSuffix": "rs"
+        },
+        {
+            "key": "some",
+            "wrap_template": "Some({})",
+            "fileSuffix": "rs"
+        },
+        {
+            "key": "print",
+            "wrap_template": "print({})",
+            "fileSuffix": "py"
+        }
+    ],
+    "editor.fontLigatures": true,
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "explorer.confirmPasteNative": false,
+    "window.confirmSaveUntitledWorkspace": false,
+    "git.autofetch": true,
+    "git.autofetchPeriod": 10,
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "--halt-on-error",
+                "--interaction=nonstopmode",
+                "--synctex=-1",
+                "%DOC%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex",
+            "tools": ["xelatex"]
+        }
+    ],
+    "latex-workshop.latex.recipe.default": "xelatex",
+    "security.workspace.trust.untrustedFiles": "open",
+    "makefile.configureOnOpen": true,
+    "markdown-preview-enhanced.enablePreviewZenMode": false,
+    "json.schemas": [],
+    "vsicons.dontShowNewVersionMessage": true,
+    "vscode_custom_css.imports": [
+        "file:///C:/Users/Admin/AppData/Roaming/Code/User/custom.css",
+        "file:///C:/Users/Admin/AppData/Roaming/Code/User/custom-vscode.css",
+        "file:///C:/Users/Admin/AppData/Roaming/Code/User/explorer.css",
+        "file:///C:/Users/Admin/AppData/Roaming/Code/User/panel.css",
+        "file:///C:/Users/Admin/AppData/Roaming/Code/User/cursor.css",
+        "file:///C:/Users/Admin/AppData/Roaming/Code/User/rainbow-linenumber.js",
+        "file:///c:/Users/Admin/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
+    ],
+    "gitlens.currentLine.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
+    "remote.SSH.remotePlatform": {
+        "10.176.37.42": "linux"
     },
-    {
-      "key": "ok",
-      "wrap_template": "Ok({})",
-      "fileSuffix": "rs"
+    "mesonbuild.downloadLanguageServer": true,
+    "cmake.showOptionsMovedNotification": false,
+    "WolframLanguageServer.Port": 5454,
+    "WolframLanguageServer.WLServerPath": "E:\\Folder Collection\\lsp-wl",
+    "WolframLanguageServer.WolframPath": "C:\\Program Files\\Wolfram Research\\Mathematica\\12.1\\wolfram.exe",
+    "WolframLanguageServer.Diagnostics.suppressed": [],
+    "WolframLanguageServer.trace.server": "messages",
+    "wolframLanguageNotebook.kernel.configurations": {
+        "wolframscript": {
+            "type": "local",
+            "command": "wolframscript",
+            "ports": "49152-65535"
+        }
     },
-    {
-      "key": "some",
-      "wrap_template": "Some({})",
-      "fileSuffix": "rs"
+    "wlsp.executablePath": "C:\\Program Files\\Wolfram Research\\Wolfram Engine\\wolframscript.exe",
+    "notebook.backup.sizeLimit": 0,
+    "jupyter.interactiveWindow.creationMode": "perFile",
+    "jupyter.interactiveWindow.textEditor.autoAddNewCell": false,
+    "notebook.scrolling.revealNextCellOnExecute": "none",
+    "wolframLanguageNotebook.rendering.imageWithTransparency": true,
+    "wolframLanguageNotebook.kernel.connectOnOpeningNotebook": "wolframscript",
+    "wolframLanguageNotebook.rendering.boxesTimeLimit": 1000000,
+    "wolframLanguageNotebook.rendering.htmlTimeLimit": 1000000,
+    "wolframLanguageNotebook.rendering.outputSizeLimit": 50000,
+    "workbench.iconTheme": "material-icon-theme",
+    "vim.visualstar": true,
+    "notebook.output.textLineLimit": 300,
+    "explorer.autoReveal": false,
+    "wolframLanguageNotebook.editor.caseSensitiveAutocompletion": false,
+    "workbench.list.mouseWheelScrollSensitivity": 5,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "tabout.charactersToTabOutFrom": [
+        {
+            "open": "[",
+            "close": "]"
+        },
+        {
+            "open": "{",
+            "close": "}"
+        },
+        {
+            "open": "(",
+            "close": ")"
+        },
+        {
+            "open": "'",
+            "close": "'"
+        },
+        {
+            "open": "\"",
+            "close": "\""
+        },
+        {
+            "open": ":",
+            "close": ":"
+        },
+        {
+            "open": "=",
+            "close": "="
+        },
+        {
+            "open": ">",
+            "close": ">"
+        },
+        {
+            "open": "<",
+            "close": "<"
+        },
+        {
+            "open": ".",
+            "close": "."
+        },
+        {
+            "open": "`",
+            "close": "`"
+        },
+        {
+            "open": ";",
+            "close": ";"
+        }
+    ],
+    "evenBetterToml.formatter.indentTables": true,
+    "prettier.tabWidth": 4,
+    "workbench.colorTheme": "One Monokai Python Italic Customized",
+    "remote.SSH.path": "C:\\windows\\System32\\OpenSSH\\ssh.exe",
+    "C_Cpp.autocompleteAddParentheses": true,
+    "python.analysis.autoFormatStrings": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.includeAliasesFromUserFiles": true,
+    "python.analysis.inlayHints.callArgumentNames": "all",
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.pytestParameters": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.supportDocstringTemplate": true,
+    "python.analysis.typeCheckingMode": "standard",
+    "python.analysis.typeEvaluation.deprecateTypingAliases": true,
+    "python.analysis.typeEvaluation.enableExperimentalFeatures": true,
+    "python.analysis.typeEvaluation.enableReachabilityAnalysis": true,
+    "python.analysis.typeEvaluation.disableBytesTypePromotions": true,
+    "python.analysis.typeEvaluation.strictDictionaryInference": true,
+    "python.analysis.typeEvaluation.strictListInference": true,
+    "python.analysis.typeEvaluation.strictSetInference": true,
+    "python.analysis.userFileIndexingLimit": -1,
+    "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
+    "C_Cpp.inlayHints.parameterNames.enabled": true,
+    "C_Cpp.inlayHints.referenceOperator.enabled": true,
+    "C_Cpp.intelliSenseEngineFallback": "enabled",
+    "C_Cpp.intelliSenseUpdateDelay": 500,
+    "C_Cpp.markdownInComments": "enabled",
+    "C_Cpp.codeAnalysis.updateDelay": 0,
+    "C_Cpp.experimentalFeatures": "enabled",
+    // "github.copilot.advanced": {
+    //     "debug.overrideCAPIUrl": "http://127.0.0.1:8181/v1",
+    //     "debug.overrideProxyUrl": "http://127.0.0.1:8181",
+    //     "debug.chatOverrideProxyUrl": "http://127.0.0.1:8181/v1/chat/completions",
+    //     "authProvider": "github"
+    // },
+    "settingsSync.ignoredSettings": [],
+    "pandoc.pdfOptString": "--citeproc --listing --from=markdown+smart  --verbose --pdf-engine=xelatex --pdf-engine-opt=\"-shell-escape\" --template=\"C:\\Users\\Admin\\AppData\\Roaming\\Code\\User\\custom-template.tex\"  --lua-filter=\"C:\\Users\\Admin\\AppData\\Roaming\\Code\\User\\mermaid.lua\" --lua-filter=\"C:\\Users\\Admin\\AppData\\Roaming\\Code\\User\\image-wrapper.lua\" ",
+    "pandoc.render.openViewer": false,
+    "python.createEnvironment.trigger": "off",
+    "qtdoc.paths": [],
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
+    "chat.editing.confirmEditRequestRetry": false,
+    "gitlens.views.drafts.avatars": false,
+    "chat.editing.confirmEditRequestRemoval": false,
+    "livePreview.notifyOnOpenLooseFile": false,
+    "cmake.configureSettings": {
+        // add -DCMAKE_TOOLCHAIN_FILE=E:/vcpkg/scripts/buildsystems/vcpkg.cmake
+        "CMAKE_TOOLCHAIN_FILE": "E:/vcpkg/scripts/buildsystems/vcpkg.cmake"
     },
-    {
-      "key": "print",
-      "wrap_template": "print({})",
-      "fileSuffix": "py"
-    }
-
-
-  ],
-"editor.fontLigatures": true,
-"git.enableSmartCommit": true,
-"git.confirmSync": false,
-"explorer.confirmPasteNative": false,
-"window.confirmSaveUntitledWorkspace": false,
-"git.autofetch": true,
-"git.autofetchPeriod": 10,
-"latex-workshop.latex.tools": [
-    {
-      "name": "xelatex",
-      "command": "xelatex",
-      "args": [
-        "--halt-on-error",
-        "--interaction=nonstopmode",
-        "--synctex=-1",
-        "%DOC%"
-      ]
-    }
-],
-"latex-workshop.latex.recipes": [
-
-    {
-      "name": "xelatex",
-      "tools": [
-        "xelatex"
-      ]
-    }
-],
-"latex-workshop.latex.recipe.default": "xelatex",
-"security.workspace.trust.untrustedFiles": "open",
-"makefile.configureOnOpen": true,
-"markdown-preview-enhanced.enablePreviewZenMode": false,
-"json.schemas": [
-
-],
-"vsicons.dontShowNewVersionMessage": true,
-"vscode_custom_css.imports": [
-
-  "file:///C:/Users/Admin/AppData/Roaming/Code/User/custom.css",
-  "file:///C:/Users/Admin/AppData/Roaming/Code/User/custom-vscode.css",
-  "file:///C:/Users/Admin/AppData/Roaming/Code/User/explorer.css",
-  "file:///C:/Users/Admin/AppData/Roaming/Code/User/panel.css",
-  "file:///C:/Users/Admin/AppData/Roaming/Code/User/cursor.css",
-  "file:///C:/Users/Admin/AppData/Roaming/Code/User/rainbow-linenumber.js",
-  "file:///c:/Users/Admin/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
-],
-"gitlens.currentLine.enabled": false,
-"gitlens.hovers.currentLine.over": "line",
-"remote.SSH.remotePlatform": {
-  "10.176.37.42": "linux"
-},
-"mesonbuild.downloadLanguageServer": true,
-"cmake.showOptionsMovedNotification": false,
-"WolframLanguageServer.Port": 5454,
-"WolframLanguageServer.WLServerPath": "E:\\Folder Collection\\lsp-wl",
-"WolframLanguageServer.WolframPath": "C:\\Program Files\\Wolfram Research\\Mathematica\\12.1\\wolfram.exe",
-"WolframLanguageServer.Diagnostics.suppressed": [
-
-],
-"WolframLanguageServer.trace.server": "messages",
-"wolframLanguageNotebook.kernel.configurations": {
-    "wolframscript": {
-        "type": "local",
-        "command": "wolframscript",
-        "ports": "49152-65535"
-    }
-},
-"wlsp.executablePath": "C:\\Program Files\\Wolfram Research\\Wolfram Engine\\wolframscript.exe",
-"notebook.backup.sizeLimit": 0,
-"jupyter.interactiveWindow.creationMode": "perFile",
-"jupyter.interactiveWindow.textEditor.autoAddNewCell": false,
-"notebook.scrolling.revealNextCellOnExecute": "none",
-"wolframLanguageNotebook.rendering.imageWithTransparency": true,
-"wolframLanguageNotebook.kernel.connectOnOpeningNotebook": "wolframscript",
-"wolframLanguageNotebook.rendering.boxesTimeLimit": 1000000,
-"wolframLanguageNotebook.rendering.htmlTimeLimit": 1000000,
-"wolframLanguageNotebook.rendering.outputSizeLimit": 50000,
-"workbench.iconTheme": "material-icon-theme",
-"vim.visualstar": true,
-"notebook.output.textLineLimit": 300,
-"explorer.autoReveal": false,
-"wolframLanguageNotebook.editor.caseSensitiveAutocompletion": false,
-"workbench.list.mouseWheelScrollSensitivity": 5,
-"liveServer.settings.donotShowInfoMsg": true,
-"tabout.charactersToTabOutFrom": [
-  {
-    "open": "[",
-    "close": "]"
-  },
-  {
-    "open": "{",
-    "close": "}"
-  },
-  {
-    "open": "(",
-    "close": ")"
-  },
-  {
-    "open": "'",
-    "close": "'"
-  },
-  {
-    "open": "\"",
-    "close": "\""
-  },
-  {
-    "open": ":",
-    "close": ":"
-  },
-  {
-    "open": "=",
-    "close": "="
-  },
-  {
-    "open": ">",
-    "close": ">"
-  },
-  {
-    "open": "<",
-    "close": "<"
-  },
-  {
-    "open": ".",
-    "close": "."
-  },
-  {
-    "open": "`",
-    "close": "`"
-  },
-  {
-    "open": ";",
-    "close": ";"
-  }
-],
-"evenBetterToml.formatter.indentTables": true,
-"prettier.tabWidth": 4,
-"workbench.colorTheme": "One Monokai Python Italic Customized",
-"remote.SSH.path": "C:\\windows\\System32\\OpenSSH\\ssh.exe",
-"C_Cpp.autocompleteAddParentheses": true,
-"python.analysis.autoFormatStrings": true,
-"python.analysis.autoImportCompletions": true,
-"python.analysis.completeFunctionParens": true,
-"python.analysis.includeAliasesFromUserFiles": true,
-"python.analysis.inlayHints.callArgumentNames": "all",
-"python.analysis.inlayHints.functionReturnTypes": true,
-"python.analysis.inlayHints.pytestParameters": true,
-"python.analysis.inlayHints.variableTypes": true,
-"python.analysis.supportDocstringTemplate": true,
-"python.analysis.typeCheckingMode": "standard",
-"python.analysis.typeEvaluation.deprecateTypingAliases": true,
-"python.analysis.typeEvaluation.enableExperimentalFeatures": true,
-"python.analysis.typeEvaluation.enableReachabilityAnalysis": true,
-"python.analysis.typeEvaluation.disableBytesTypePromotions": true,
-"python.analysis.typeEvaluation.strictDictionaryInference": true,
-"python.analysis.typeEvaluation.strictListInference": true,
-"python.analysis.typeEvaluation.strictSetInference": true,
-"python.analysis.userFileIndexingLimit": -1,
-"C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
-"C_Cpp.inlayHints.parameterNames.enabled": true,
-"C_Cpp.inlayHints.referenceOperator.enabled": true,
-"C_Cpp.intelliSenseEngineFallback": "enabled",
-"C_Cpp.intelliSenseUpdateDelay": 500,
-"C_Cpp.markdownInComments": "enabled",
-"C_Cpp.codeAnalysis.updateDelay": 0,
-"C_Cpp.experimentalFeatures": "enabled",
-// "github.copilot.advanced": {
-//     "debug.overrideCAPIUrl": "http://127.0.0.1:8181/v1",
-//     "debug.overrideProxyUrl": "http://127.0.0.1:8181",
-//     "debug.chatOverrideProxyUrl": "http://127.0.0.1:8181/v1/chat/completions",
-//     "authProvider": "github"
-// },
-"settingsSync.ignoredSettings": [
-
-],
-"pandoc.pdfOptString": "--citeproc --listing --from=markdown+smart  --verbose --pdf-engine=xelatex --pdf-engine-opt=\"-shell-escape\" --template=\"C:\\Users\\Admin\\AppData\\Roaming\\Code\\User\\custom-template.tex\" --lua-filter=\"C:\\Users\\Admin\\AppData\\Roaming\\Code\\User\\image-wrapper.lua\" ",
-"pandoc.render.openViewer": false,
-"python.createEnvironment.trigger": "off",
-"qtdoc.paths": [
-
-],
-"cmake.pinnedCommands": [
-  "workbench.action.tasks.configureTaskRunner",
-  "workbench.action.tasks.runTask"
-],
-"chat.editing.confirmEditRequestRetry": false,
-"gitlens.views.drafts.avatars": false,
-"chat.editing.confirmEditRequestRemoval": false,
-"livePreview.notifyOnOpenLooseFile": false,
-"cmake.configureSettings": {
-  // add -DCMAKE_TOOLCHAIN_FILE=E:/vcpkg/scripts/buildsystems/vcpkg.cmake
-  "CMAKE_TOOLCHAIN_FILE": "E:/vcpkg/scripts/buildsystems/vcpkg.cmake"
-},
-"editor.fontFamily": "Maple Mono NF CN, 微软雅黑, 'Courier New', monospace",
-"editor.minimap.renderCharacters": false,
-"editor.minimap.enabled": false,
-"editor.lineDecorationsWidth": 10,
-"svelte.enable-ts-plugin": true,
-"breadcrumbs.symbolPath": "off",
-"zenMode.hideLineNumbers": false,
-"search.showLineNumbers": true,
-"terminal.integrated.tabs.location": "left",
-"workbench.tree.indent": 14,
-// "workbench.colorCustomizations": {
-//     "tree.indentGuidesStroke": "#ffe56f",
-//     "tree.inactiveIndentGuidesStroke": "#72dfeb",
-//     "gitDecoration.modifiedResourceForeground": "#74aeec",
-//     "gitDecoration.stageModifiedResourceForeground": "#74aeec",
-//     "gitDecoration.addedResourceForeground": "#7fd27fd9",
-//     "gitDecoration.renamedResourceForeground": "#74aeec",
-//     "gitDecoration.untrackedResourceForeground": "#f7aeae",
-//     "gitDecoration.ignoredResourceForeground": "#ffffff3b",
-//     "tab.activeBorderTop": "#0095ff",
-// },
-"diffEditor.experimental.showMoves": true,
-"typescript.preferences.includePackageJsonAutoImports": "on",
-"typescript.preferences.preferTypeOnlyAutoImports": true,
-"scss.implicitlyLabel": "",
-"scss.showErrors": true,
-"sass.andStared": [
-    "active",
-    "focus",
-    "hover",
-    "nth-child"
-],
-"editor.linkedEditing": true,
-// "editor.snippetSuggestions": "bottom",
-"svelte.plugin.svelte.defaultScriptLanguage": "ts",
-"svelte.plugin.svelte.codeActions.enable": false,
-// "editor.suggestSelection": "recentlyUsedByPrefix",
-// "editor.suggest.preview": true,
-// "editor.suggest.shareSuggestSelections": true,
-"files.insertFinalNewline": true,
-"editor.hover.hidingDelay": 100,
-"editor.inlayHints.padding": true,
-"editor.wordWrap": "on",
-"workbench.editor.enablePreviewFromCodeNavigation": true,
-"workbench.editor.customLabels.patterns": {
-    "/**/+**.svelte": "${dirname} ${filename}.${extname}",
-    "/**/+**.ts": "${dirname} ${filename}.${extname}"
-},
-"ltex.diagnosticSeverity": "information",
-"editor.trimAutoWhitespace": false,
-"javascript.inlayHints.enumMemberValues.enabled": true,
-"javascript.suggest.completeFunctionCalls": true,
-// "emmet.useInlineCompletions": true,
-"[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-},
-"path-intellisense.autoTriggerNextSuggestion": true,
-"path-intellisense.mappings": {
-    "~": "${workspaceFolder}/resources/js",
-},
-"vue.server.hybridMode": true,
-"editor.detectIndentation": false,
-"editor.indentSize": 4,
-"editor.tabSize": 4,
-"errorLens.delayMode": "debounce",
-"problems.decorations.enabled": false,
-"editor.accessibilitySupport": "off",
-"workbench.list.smoothScrolling": true,
-"editor.smoothScrolling": true,
-"terminal.integrated.smoothScrolling": true,
-"security.workspace.trust.startupPrompt": "never",
-"security.workspace.trust.enabled": false,
-"editor.lineNumbers": "on",
-"workbench.activityBar.location": "top",
-"liveshare.allowGuestTaskControl": true,
-"liveshare.allowGuestDebugControl": true,
-"liveshare.launcherClient": "visualStudioCode",
-"liveshare.notebooks.allowGuestExecuteCells": true,
-"liveshare.publishWorkspaceInfo": true,
-"liveshare.connectionMode": "relay",
-"window.menuBarVisibility": "compact",
-"remote.extensionKind": {
-        "WakaTime.vscode-wakatime": [ "ui" ],
-        "GitHub.copilot": [ "ui" ],
+    "editor.fontFamily": "Maple Mono NF CN, 微软雅黑, 'Courier New', monospace",
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.enabled": false,
+    "editor.lineDecorationsWidth": 10,
+    "svelte.enable-ts-plugin": true,
+    "breadcrumbs.symbolPath": "off",
+    "zenMode.hideLineNumbers": false,
+    "search.showLineNumbers": true,
+    "terminal.integrated.tabs.location": "left",
+    "workbench.tree.indent": 14,
+    // "workbench.colorCustomizations": {
+    //     "tree.indentGuidesStroke": "#ffe56f",
+    //     "tree.inactiveIndentGuidesStroke": "#72dfeb",
+    //     "gitDecoration.modifiedResourceForeground": "#74aeec",
+    //     "gitDecoration.stageModifiedResourceForeground": "#74aeec",
+    //     "gitDecoration.addedResourceForeground": "#7fd27fd9",
+    //     "gitDecoration.renamedResourceForeground": "#74aeec",
+    //     "gitDecoration.untrackedResourceForeground": "#f7aeae",
+    //     "gitDecoration.ignoredResourceForeground": "#ffffff3b",
+    //     "tab.activeBorderTop": "#0095ff",
+    // },
+    "diffEditor.experimental.showMoves": true,
+    "typescript.preferences.includePackageJsonAutoImports": "on",
+    "typescript.preferences.preferTypeOnlyAutoImports": true,
+    "scss.implicitlyLabel": "",
+    "scss.showErrors": true,
+    "sass.andStared": ["active", "focus", "hover", "nth-child"],
+    "editor.linkedEditing": true,
+    // "editor.snippetSuggestions": "bottom",
+    "svelte.plugin.svelte.defaultScriptLanguage": "ts",
+    "svelte.plugin.svelte.codeActions.enable": false,
+    // "editor.suggestSelection": "recentlyUsedByPrefix",
+    // "editor.suggest.preview": true,
+    // "editor.suggest.shareSuggestSelections": true,
+    "files.insertFinalNewline": true,
+    "editor.hover.hidingDelay": 100,
+    "editor.inlayHints.padding": true,
+    "editor.wordWrap": "on",
+    "workbench.editor.enablePreviewFromCodeNavigation": true,
+    "workbench.editor.customLabels.patterns": {
+        "/**/+**.svelte": "${dirname} ${filename}.${extname}",
+        "/**/+**.ts": "${dirname} ${filename}.${extname}"
+    },
+    "ltex.diagnosticSeverity": "information",
+    "editor.trimAutoWhitespace": false,
+    "javascript.inlayHints.enumMemberValues.enabled": true,
+    "javascript.suggest.completeFunctionCalls": true,
+    // "emmet.useInlineCompletions": true,
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "path-intellisense.autoTriggerNextSuggestion": true,
+    "path-intellisense.mappings": {
+        "~": "${workspaceFolder}/resources/js"
+    },
+    "vue.server.hybridMode": true,
+    "editor.detectIndentation": false,
+    "editor.indentSize": 4,
+    "editor.tabSize": 4,
+    "errorLens.delayMode": "debounce",
+    "problems.decorations.enabled": false,
+    "editor.accessibilitySupport": "off",
+    "workbench.list.smoothScrolling": true,
+    "editor.smoothScrolling": true,
+    "terminal.integrated.smoothScrolling": true,
+    "security.workspace.trust.startupPrompt": "never",
+    "security.workspace.trust.enabled": false,
+    "editor.lineNumbers": "on",
+    "workbench.activityBar.location": "top",
+    "liveshare.allowGuestTaskControl": true,
+    "liveshare.allowGuestDebugControl": true,
+    "liveshare.launcherClient": "visualStudioCode",
+    "liveshare.notebooks.allowGuestExecuteCells": true,
+    "liveshare.publishWorkspaceInfo": true,
+    "liveshare.connectionMode": "relay",
+    "window.menuBarVisibility": "compact",
+    "remote.extensionKind": {
+        "WakaTime.vscode-wakatime": ["ui"],
+        "GitHub.copilot": ["ui"],
         "GitHub.copilot-chat": ["ui"]
-},
-"git.rebaseWhenSync": true,
-"latex-workshop.latex.external.build.args": [
-    "-shell-escape"
-],
-"[latex]": {
-    "editor.defaultFormatter": "nickfode.latex-formatter"
-},
-"MATLAB.installPath": "C:\\Program Files\\MATLAB\\R2024b",
-"terminal.integrated.commandsToSkipShell": [
-    "matlab.interrupt"
-],
-"window.openFilesInNewWindow": "on",
-"window.openFoldersInNewWindow": "on",
-"latex-workshop.intellisense.update.delay": 500,
-"chat.editing.alwaysSaveWithGeneratedChanges": true,
-"cline.vsCodeLmModelSelector": {
-},
-"ltex.completionEnabled": true,
-"ltex.java.path": "C:\\Program Files\\Eclipse Adoptium\\jre-17.0.9.9-hotspot\\bin\\java.exe",
-"ltex.ltex-ls.path": "E:\\ltex-ls-16.0.0\\bin\\ltex-ls.bat",
-"latex-workshop.synctex.afterBuild.enabled": true,
-"latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
-"latex-workshop.view.outline.sync.viewer": true,
-"editor.defaultFormatter": "James-Yu.latex-workshop",
-"latex-workshop.view.pdf.toolbar.hide.timeout": 0.2,
-"latexPreview.dpi": 144,
-"window.titleBarStyle": "custom",
-"terminal.integrated.fontLigatures": true,
-"github.copilot.advanced": {
-
-    
-},
-"chat.agent.enabled": true,
-"github.copilot.chat.generateTests.codeLens": true,
-"github.copilot.chat.search.semanticTextResults": true,
-"python.analysis.aiCodeActions": {
-    
-},
-"github.copilot.chat.edits.codesearch.enabled": true,
-"github.copilot.chat.editor.temporalContext.enabled": true,
-"rust-analyzer.inlayHints.genericParameterHints.type.enable": true,
-"python.analysis.generateWithTypeAnnotation": true,
-"github.copilot.chat.languageContext.typescript.enabled": true,
-"animations.CursorAnimation": true,
-"animations.Auto-Install": false,
-"[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-},
-"verilog.ctags.path": "ctags",
-"[systemverilog]": {
-    "editor.defaultFormatter": "mshr-h.veriloghdl"
-},
-"verilog.linting.linter": "verilator",
-"cmake.showConfigureWithDebuggerNotification": false,
-"C_Cpp.default.cppStandard": "c++23",
-"C_Cpp.default.cStandard": "c23",
-"C_Cpp.default.compilerPath": "E:/mingw64/bin/g++.exe",
-"C_Cpp.default.intelliSenseMode": "windows-gcc-x86",
-"C_Cpp.default.includePath": [
-    "C:/Users/Admin/AppData/Local/.xmake/**/include/*"
-],
-"terminal.integrated.enablePersistentSessions": false,
-"verilog.linting.verilator.includePath": [
-    "/home/wsy/arch-2025/vsrc"
-],
-"systemverilog.compileOnSave": true,
-"systemverilog.launchConfigurationVerilator": "verilator --sv --lint-only --language 1800-2012 --Wall -I/home/wsy/arch-2025/vsrc",
-"systemverilog.compileOnOpen": true,
-"systemverilog.antlrVerification": true,
-"verilog.linting.verilator.useWSL": true,
-"verilog.languageServer.veribleVerilogLs.enabled": true,
-"window.newWindowDimensions": "maximized",
-"workbench.panel.opensMaximized": "never",
-"editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
-"workbench.editor.preferHistoryBasedLanguageDetection": true,
-"workbench.hover.delay": 300,
-"workbench.statusBar.visible": false,
+    },
+    "git.rebaseWhenSync": true,
+    "latex-workshop.latex.external.build.args": ["-shell-escape"],
+    "[latex]": {
+        "editor.defaultFormatter": "nickfode.latex-formatter"
+    },
+    "MATLAB.installPath": "C:\\Program Files\\MATLAB\\R2024b",
+    "terminal.integrated.commandsToSkipShell": ["matlab.interrupt"],
+    "window.openFilesInNewWindow": "on",
+    "window.openFoldersInNewWindow": "on",
+    "latex-workshop.intellisense.update.delay": 500,
+    "chat.editing.alwaysSaveWithGeneratedChanges": true,
+    "cline.vsCodeLmModelSelector": {},
+    "ltex.completionEnabled": true,
+    "ltex.java.path": "C:\\Program Files\\Eclipse Adoptium\\jre-17.0.9.9-hotspot\\bin\\java.exe",
+    "ltex.ltex-ls.path": "E:\\ltex-ls-16.0.0\\bin\\ltex-ls.bat",
+    "latex-workshop.synctex.afterBuild.enabled": true,
+    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+    "latex-workshop.view.outline.sync.viewer": true,
+    "editor.defaultFormatter": "James-Yu.latex-workshop",
+    "latex-workshop.view.pdf.toolbar.hide.timeout": 0.2,
+    "latexPreview.dpi": 144,
+    "window.titleBarStyle": "custom",
+    "terminal.integrated.fontLigatures": true,
+    "github.copilot.advanced": {},
+    "chat.agent.enabled": true,
+    "github.copilot.chat.generateTests.codeLens": true,
+    "github.copilot.chat.search.semanticTextResults": true,
+    "python.analysis.aiCodeActions": {},
+    "github.copilot.chat.edits.codesearch.enabled": true,
+    "github.copilot.chat.editor.temporalContext.enabled": true,
+    "rust-analyzer.inlayHints.genericParameterHints.type.enable": true,
+    "python.analysis.generateWithTypeAnnotation": true,
+    "github.copilot.chat.languageContext.typescript.enabled": true,
+    "animations.CursorAnimation": true,
+    "animations.Auto-Install": false,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "verilog.ctags.path": "ctags",
+    "[systemverilog]": {
+        "editor.defaultFormatter": "mshr-h.veriloghdl"
+    },
+    "verilog.linting.linter": "verilator",
+    "cmake.showConfigureWithDebuggerNotification": false,
+    "C_Cpp.default.cppStandard": "c++23",
+    "C_Cpp.default.cStandard": "c23",
+    "C_Cpp.default.compilerPath": "E:/mingw64/bin/g++.exe",
+    "C_Cpp.default.intelliSenseMode": "windows-gcc-x86",
+    "C_Cpp.default.includePath": [
+        "C:/Users/Admin/AppData/Local/.xmake/**/include/*"
+    ],
+    "terminal.integrated.enablePersistentSessions": false,
+    "verilog.linting.verilator.includePath": ["/home/wsy/arch-2025/vsrc"],
+    "systemverilog.compileOnSave": true,
+    "systemverilog.launchConfigurationVerilator": "verilator --sv --lint-only --language 1800-2012 --Wall -I/home/wsy/arch-2025/vsrc",
+    "systemverilog.compileOnOpen": true,
+    "systemverilog.antlrVerification": true,
+    "verilog.linting.verilator.useWSL": true,
+    "verilog.languageServer.veribleVerilogLs.enabled": true,
+    "window.newWindowDimensions": "maximized",
+    "workbench.panel.opensMaximized": "never",
+    "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+    "workbench.editor.preferHistoryBasedLanguageDetection": true,
+    "workbench.hover.delay": 300,
+    "workbench.statusBar.visible": false,
+    "importSorter.generalConfiguration.sortOnBeforeSave": true,
+    "security.allowedUNCHosts": ["wsl.localhost"],
+    "github.copilot.chat.codesearch.enabled": true,
+    "github.copilot.nextEditSuggestions.enabled": false
 }
