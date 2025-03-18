@@ -20,11 +20,30 @@ local output_dir = "mermaid-images"
 
 -- Function to create a unique filename based on content
 local function get_filename(code)
-    local hash = ""
-    for i = 1, math.min(#code, 10) do
-        hash = hash .. string.format("%02x", string.byte(code, i))
+    -- Generate two separate hashes to create a 16-character identifier
+    local hash1 = 5381
+    local hash2 = 52711  -- Different seed for second hash
+    
+    for i = 1, #code do
+        local byte = string.byte(code, i)
+        -- Update both hashes with different algorithms
+        hash1 = ((hash1 * 33) + byte) % 0xFFFFFFFF
+        hash2 = ((hash2 * 31) + byte) % 0xFFFFFFFF  -- Using 31 as multiplier for variation
     end
-    return "mermaid-" .. hash .. ".png"
+    
+    -- Convert to hex string with fixed length (16 characters)
+    local hash_str = string.format("%08x%08x", hash1, hash2)
+    return "mermaid-" .. hash_str .. ".png"
+end
+
+-- Check if a file exists at the given path
+local function file_exists(path)
+    local f = io.open(path, "r")
+    if f then
+        f:close()
+        return true
+    end
+    return false
 end
 
 local function ensure_directory_exists(dir)
@@ -146,6 +165,14 @@ function CodeBlock(block)
         local image_path = output_dir .. "/" .. image_file
         -- Fix windows path for OS execution
         local os_image_path = output_dir .. "\\" .. image_file
+        
+        -- Check if image already exists
+        if file_exists(os_image_path) then
+            io.stderr:write("Image already exists: " .. os_image_path .. ", skipping generation\n")
+            local caption = {pandoc.Str(caption_text)}
+            local attr = pandoc.Attr("", {"mermaid-diagram"}, {})
+            return pandoc.Para{pandoc.Image(caption, image_path, "", attr)}
+        end
         
         local tmp_file = os.getenv("TEMP") .. "\\mermaid-temp-" .. os.time() .. ".mmd"
         
