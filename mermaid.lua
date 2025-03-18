@@ -1,4 +1,19 @@
--- Mermaid filter with caption support and git integration (without cleanup)
+-- Mermaid filter with caption support, git integration, and command availability check
+
+-- Check if mmdc command is available
+local function is_mmdc_available()
+    local handle = io.popen("where mmdc 2>nul")
+    if not handle then return false end
+    
+    local result = handle:read("*a")
+    handle:close()
+    
+    -- If 'where' command returns a path, mmdc is available
+    return result:match("mmdc") ~= nil
+end
+
+-- Global flag to track if mmdc is available (checked only once)
+local mmdc_available = nil
 
 local output_dir = "mermaid-images"
 
@@ -99,7 +114,23 @@ local function update_gitignore()
 end
 
 function CodeBlock(block)
+    -- Check if this is a mermaid code block
     if block.classes and block.classes[1] == "mermaid" then
+        -- Check mmdc availability (only once)
+        if mmdc_available == nil then
+            mmdc_available = is_mmdc_available()
+            
+            if not mmdc_available then
+                io.stderr:write("\n⚠️ ERROR: 'mmdc' command not found. Mermaid diagrams will not be processed.\n")
+                io.stderr:write("Please install mermaid-cli by running: npm install -g @mermaid-js/mermaid-cli\n\n")
+                -- Return original block to keep mermaid source in document
+                return block
+            end
+        elseif mmdc_available == false then
+            -- Already checked and not available
+            return block
+        end
+        
         ensure_directory_exists(output_dir)
         
         -- Extract caption
@@ -146,8 +177,10 @@ end
 
 -- Handle operations at the end of processing
 function Pandoc(doc)
-    -- Update .gitignore if in a git repository
-    update_gitignore()
+    -- Only update gitignore if we're actually processing Mermaid diagrams
+    if mmdc_available then
+        update_gitignore()
+    end
     return doc
 end
 
