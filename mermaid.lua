@@ -2,14 +2,15 @@
 
 -- Check if mmdc command is available
 local function is_mmdc_available()
-    local handle = io.popen("where mmdc 2>nul")
+    -- Fix PowerShell command execution issue
+    local handle = io.popen("where.exe mmdc 2> NUL || echo not found")
     if not handle then return false end
     
     local result = handle:read("*a")
     handle:close()
     
-    -- If 'where' command returns a path, mmdc is available
-    return result:match("mmdc") ~= nil
+    -- If 'where' command returns a path (and not "not found"), mmdc is available
+    return not result:match("not found")
 end
 
 -- Global flag to track if mmdc is available (checked only once)
@@ -115,6 +116,7 @@ end
 
 function CodeBlock(block)
     -- Check if this is a mermaid code block
+    io.stderr:write("Checking block...\n")
     if block.classes and block.classes[1] == "mermaid" then
         -- Check mmdc availability (only once)
         if mmdc_available == nil then
@@ -140,7 +142,10 @@ function CodeBlock(block)
         local mermaid_code = block.text:gsub("^%s*%%%% caption:%s*.-\n", "")
         
         local image_file = get_filename(mermaid_code)
-        local image_path = output_dir .. "\\" .. image_file
+        -- Use consistent forward slash path for both file operations and references
+        local image_path = output_dir .. "/" .. image_file
+        -- Fix windows path for OS execution
+        local os_image_path = output_dir .. "\\" .. image_file
         
         local tmp_file = os.getenv("TEMP") .. "\\mermaid-temp-" .. os.time() .. ".mmd"
         
@@ -154,8 +159,10 @@ function CodeBlock(block)
         f:close()
         
         -- Universal parameters for all diagram types
-        local command = string.format('mmdc -i "%s" -o "%s" -w 800 -h 600 --scale 1.5 --backgroundColor white', 
-                                    tmp_file, image_path)
+        local command = string.format('mmdc -i "%s" -o "%s" --backgroundColor white', 
+                                    tmp_file, os_image_path)
+        -- print the command
+        io.stderr:write("Running: " .. command .. "\n")
         local success = os.execute(command)
         
         -- Clean up temp file right after use
@@ -163,7 +170,8 @@ function CodeBlock(block)
         
         if success then
             local caption = {pandoc.Str(caption_text)}
-            local src = output_dir .. "/" .. image_file
+            -- Use the same path format that was used to create the image
+            local src = image_path
             local attr = pandoc.Attr("", {"mermaid-diagram"}, {})
             return pandoc.Para{pandoc.Image(caption, src, "", attr)}
         else
