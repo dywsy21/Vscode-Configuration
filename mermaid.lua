@@ -1,4 +1,6 @@
--- Mermaid filter with caption support
+-- Mermaid filter with caption support and git integration (without cleanup)
+
+local output_dir = "mermaid-images"
 
 -- Function to create a unique filename based on content
 local function get_filename(code)
@@ -21,19 +23,83 @@ local function extract_caption(code)
         return caption_line
     end
     
-    -- Look for title comment: %% title: Your title text (fallback)
-    local title_line = code:match("^%s*%%%% title:%s*(.-)%s*\n")
-    if title_line and title_line ~= "" then
-        return title_line
-    end
-    
     -- Default caption
     return "Mermaid diagram"
 end
 
+-- Check if we are in a git repository
+local function is_git_repo()
+    local cmd = 'git rev-parse --is-inside-work-tree 2>nul'
+    local handle = io.popen(cmd)
+    if not handle then return false end
+    
+    local result = handle:read("*a")
+    handle:close()
+    
+    return result:match("true") ~= nil
+end
+
+-- Check if pattern exists in gitignore
+local function pattern_in_gitignore(gitignore_path, pattern)
+    local f = io.open(gitignore_path, "r")
+    if not f then return false end
+    
+    for line in f:lines() do
+        -- Trim whitespace and check exact match
+        line = line:gsub("^%s*(.-)%s*$", "%1")
+        if line == pattern then
+            f:close()
+            return true
+        end
+    end
+    
+    f:close()
+    return false
+end
+
+-- Update gitignore file
+local function update_gitignore()
+    if not is_git_repo() then
+        io.stderr:write("Not a git repository, skipping .gitignore update\n")
+        return
+    end
+    
+    -- Find root of git repo
+    local cmd = 'git rev-parse --show-toplevel'
+    local handle = io.popen(cmd)
+    if not handle then return end
+    
+    local repo_root = handle:read("*l")
+    handle:close()
+    
+    if not repo_root then return end
+    
+    local gitignore_path = repo_root .. "\\.gitignore"
+    local pattern = "**/mermaid-images"
+    
+    -- Check if .gitignore exists and if pattern is already there
+    if pattern_in_gitignore(gitignore_path, pattern) then
+        io.stderr:write("Pattern already in .gitignore\n")
+        return
+    end
+    
+    -- Append or create .gitignore
+    local exists = io.open(gitignore_path, "r") ~= nil
+    
+    local f = io.open(gitignore_path, "a")
+    if f then
+        if exists then
+            f:write("\n" .. pattern .. "\n")
+        else
+            f:write(pattern .. "\n")
+        end
+        f:close()
+        io.stderr:write("Added mermaid-images to .gitignore\n")
+    end
+end
+
 function CodeBlock(block)
     if block.classes and block.classes[1] == "mermaid" then
-        local output_dir = "mermaid-images"
         ensure_directory_exists(output_dir)
         
         -- Extract caption
@@ -45,7 +111,8 @@ function CodeBlock(block)
         local image_file = get_filename(mermaid_code)
         local image_path = output_dir .. "\\" .. image_file
         
-        local tmp_file = os.getenv("TEMP") .. "\\mermaid-temp.mmd"
+        local tmp_file = os.getenv("TEMP") .. "\\mermaid-temp-" .. os.time() .. ".mmd"
+        
         local f = io.open(tmp_file, "w")
         if not f then
             io.stderr:write("Error: Cannot create temporary file\n")
@@ -59,6 +126,8 @@ function CodeBlock(block)
         local command = string.format('mmdc -i "%s" -o "%s" -w 800 -h 600 --scale 1.5 --backgroundColor white', 
                                     tmp_file, image_path)
         local success = os.execute(command)
+        
+        -- Clean up temp file right after use
         os.remove(tmp_file)
         
         if success then
@@ -75,6 +144,14 @@ function CodeBlock(block)
     return block
 end
 
+-- Handle operations at the end of processing
+function Pandoc(doc)
+    -- Update .gitignore if in a git repository
+    update_gitignore()
+    return doc
+end
+
 return {
-    { CodeBlock = CodeBlock }
+    { CodeBlock = CodeBlock },
+    { Pandoc = Pandoc }
 }
