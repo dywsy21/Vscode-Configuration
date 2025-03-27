@@ -249,10 +249,6 @@
         "when": "searchViewletFocus"
     },
     {
-        "key": "alt+p",
-        "command": "github.copilot.toggleCopilot"
-    },
-    {
         "key": "alt+delete",
         "command": "notebook.clearAllCellsOutputs"
     },
@@ -884,6 +880,11 @@
     {
         "key": "ctrl+b",
         "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "alt+p",
+        "command": "github.copilot.completions.toggle",
+        "when": "github.copilot.activated"
     }
 
     ]

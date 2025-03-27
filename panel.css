@@ -4,9 +4,10 @@
     top: 50% !important;
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
-    width: 80% !important;
+    width: 83% !important; /* Increased from 80% to 83% */
     height: 80% !important;
     max-height: 100vh !important;
+    max-width: 1800px !important; /* Added max-width for very wide screens */
     z-index: 1000 !important;
 }
 
@@ -25,8 +26,9 @@
     top: 50% !important;
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
-    width: 80% !important;
+    width: 83% !important; /* Increased from 80% to 83% */
     height: 80% !important;
+    max-width: 1800px !important; /* Added max-width for very wide screens */
 }
 
 /* Panel header styling */
@@ -40,6 +42,7 @@
 .panel > .content {
     border-bottom-left-radius: 16px !important;
     border-bottom-right-radius: 16px !important;
+    overflow: auto !important; /* Ensure content is scrollable if it exceeds dimensions */
 }
 
 /* Ensure overlay covers the entire screen */

@@ -25,17 +25,11 @@
     "github.copilot.enable": {
         "*": true,
         "plaintext": false,
-        // "markdown": true,
-        "scminput": false
+        "markdown": false,
+        "scminput": false,
+        "sql": false
     },
-    "[markdown]": {
-        "editor.quickSuggestions": {
-            "other": true,
-            "comments": true,
-            "strings": true
-        }
-    },
-    "errorLens.enabled": true,
+    "errorLens.enabled": false,
     "vim.camelCaseMotion.enable": true,
     "vim.commandLineModeKeyBindings": [],
     "vim.easymotion": true,
@@ -305,9 +299,9 @@
         "gitDecoration.untrackedResourceForeground": "#f7aeae",
         "gitDecoration.ignoredResourceForeground": "#ffffff3b",
         "tab.activeBorderTop": "#0095ff",
-        "statusBar.background": "#5f0000",
-        "statusBar.noFolderBackground": "#5f0000",
-        "statusBar.debuggingBackground": "#5f0000",
+        "statusBar.background": "#5f00af",
+        "statusBar.noFolderBackground": "#5f00af",
+        "statusBar.debuggingBackground": "#5f00af",
         "statusBar.foreground": "#ffffff",
         "statusBar.debuggingForeground": "#ffffff",
         "editorBracketPairGuide.activeBackground1": "#ff9d00",
@@ -538,7 +532,7 @@
     "qtdoc.paths": [],
     "cmake.pinnedCommands": [
         "workbench.action.tasks.configureTaskRunner",
-        "workbench.action.tasks.runTask"
+        "workbench.action.tasks.runTask"    
     ],
     "chat.editing.confirmEditRequestRetry": false,
     "gitlens.views.drafts.avatars": false,
@@ -697,5 +691,24 @@
     "importSorter.generalConfiguration.sortOnBeforeSave": true,
     "security.allowedUNCHosts": ["wsl.localhost"],
     "github.copilot.chat.codesearch.enabled": true,
-    "github.copilot.nextEditSuggestions.enabled": false
+    "github.copilot.nextEditSuggestions.enabled": false,
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "markdown.marp.browser": "edge",
+    "github.copilot.chat.edits.temporalContext.enabled": true,
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.showExpandedAbbreviation": "always",
+    "emmet.excludeLanguages": [],
+    "emmet.includeLanguages": {"markdown": "html"},
+    "emmet.showSuggestionsAsSnippets": true,
+     "[markdown]": {
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "strings": "on",
+            "other": "on"
+        },
+        "editor.wordWrap": "on"
+    },
+    "editor.tabCompletion": "on"
 }
