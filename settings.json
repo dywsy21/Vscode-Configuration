@@ -14,10 +14,10 @@
     "aide.readClipboardImage": true,
     "aide.openaiKey": "sk-OTkxJG2LUxtxmQ2WA261DaD70a6e4d3f8dF884Fb653d046c",
     "aide.openaiBaseUrl": "https://api.zhiyunai168.com/v1",
-    "glassit.alpha": 245,
+    "glassit.alpha": 255,
     "aide.aiCommand": "aider --openai-api-base https://api.zhiyunai168.com/v1 --vim #{filesRelativePath}",
     "terminal.integrated.defaultProfile.linux": "zsh",
-    "terminal.integrated.fontSize": 19,
+    "terminal.integrated.fontSize": 16,
     "terminal.integrated.mouseWheelZoom": true,
     "editor.mouseWheelScrollSensitivity": 2.8,
     "editor.mouseWheelZoom": true,
@@ -27,7 +27,8 @@
         "plaintext": false,
         "markdown": false,
         "scminput": false,
-        "sql": false
+        "sql": false,
+        "mermaid.gitGraph": true
     },
     "errorLens.enabled": false,
     "vim.camelCaseMotion.enable": true,
@@ -299,9 +300,9 @@
         "gitDecoration.untrackedResourceForeground": "#f7aeae",
         "gitDecoration.ignoredResourceForeground": "#ffffff3b",
         "tab.activeBorderTop": "#0095ff",
-        "statusBar.background": "#5f00af",
-        "statusBar.noFolderBackground": "#5f00af",
-        "statusBar.debuggingBackground": "#5f00af",
+        "statusBar.background": "#5f0000",
+        "statusBar.noFolderBackground": "#5f0000",
+        "statusBar.debuggingBackground": "#5f0000",
         "statusBar.foreground": "#ffffff",
         "statusBar.debuggingForeground": "#ffffff",
         "editorBracketPairGuide.activeBackground1": "#ff9d00",
@@ -397,7 +398,7 @@
         "file:///C:/Users/Admin/AppData/Roaming/Code/User/custom.css",
         "file:///C:/Users/Admin/AppData/Roaming/Code/User/custom-vscode.css",
         "file:///C:/Users/Admin/AppData/Roaming/Code/User/explorer.css",
-        "file:///C:/Users/Admin/AppData/Roaming/Code/User/panel.css",
+        // "file:///C:/Users/Admin/AppData/Roaming/Code/User/panel.css",
         "file:///C:/Users/Admin/AppData/Roaming/Code/User/cursor.css",
         "file:///C:/Users/Admin/AppData/Roaming/Code/User/rainbow-linenumber.js",
         "file:///c:/Users/Admin/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.7/dist/updateHandler.js"
@@ -405,7 +406,8 @@
     "gitlens.currentLine.enabled": false,
     "gitlens.hovers.currentLine.over": "line",
     "remote.SSH.remotePlatform": {
-        "10.176.37.42": "linux"
+        "10.176.37.42": "linux",
+        "10.176.50.37": "linux"
     },
     "mesonbuild.downloadLanguageServer": true,
     "cmake.showOptionsMovedNotification": false,
@@ -636,7 +638,6 @@
     "chat.editing.alwaysSaveWithGeneratedChanges": true,
     "cline.vsCodeLmModelSelector": {},
     "ltex.completionEnabled": true,
-    "ltex.java.path": "C:\\Program Files\\Eclipse Adoptium\\jre-17.0.9.9-hotspot\\bin\\java.exe",
     "ltex.ltex-ls.path": "E:\\ltex-ls-16.0.0\\bin\\ltex-ls.bat",
     "latex-workshop.synctex.afterBuild.enabled": true,
     "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
@@ -687,11 +688,10 @@
     "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
     "workbench.editor.preferHistoryBasedLanguageDetection": true,
     "workbench.hover.delay": 300,
-    "workbench.statusBar.visible": false,
     "importSorter.generalConfiguration.sortOnBeforeSave": true,
     "security.allowedUNCHosts": ["wsl.localhost"],
     "github.copilot.chat.codesearch.enabled": true,
-    "github.copilot.nextEditSuggestions.enabled": false,
+    "github.copilot.nextEditSuggestions.enabled": true,
     "[python]": {
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
@@ -710,5 +710,66 @@
         },
         "editor.wordWrap": "on"
     },
-    "editor.tabCompletion": "on"
+    "editor.tabCompletion": "on",
+    "redhat.telemetry.enabled": false,
+    "terminal.integrated.env.windows": {},
+    "hediet.vscode-drawio.resizeImages": null,
+    "workbench.editorAssociations": {
+        "*.copilotmd": "vscode.markdown.preview.editor",
+        "*.svg": "hediet.vscode-drawio-text"
+    },
+    "hediet.vscode-drawio.appearance": "dark",
+    "glowrays.disableOnErrors": false,
+    "glowrays.intensity": 1,
+    "mcp": {
+        "inputs": [
+          {
+            "type": "promptString",
+            "id": "github_token",
+            "description": "GitHub Personal Access Token",
+            "password": true
+          }
+        ],
+        "servers": {
+          "github": {
+            "command": "docker",
+            "args": [
+              "run",
+              "-i",
+              "--rm",
+              "-e",
+              "GITHUB_PERSONAL_ACCESS_TOKEN",
+              "ghcr.io/github/github-mcp-server"
+            ],
+            "env": {
+              "GITHUB_PERSONAL_ACCESS_TOKEN": "${input:github_token}"
+            }
+          }
+        }
+    },
+    "markdown.marp.pdf.noteAnnotations": true,
+    "markdown.marp.pptx.editable": "smart",
+    "markdown.marp.themes": [
+        "./themes/am_orange.scss",
+        "./themes/am_template.scss",
+        "./themes/am_blue.scss",
+        "./themes/am_green.scss",
+        "./themes/am_brown.scss",
+        "./themes/am_dark.scss",
+        "./themes/am_purple.scss",
+        "./themes/am_red.scss"
+    ],
+    "remote.WSL2.connectionMethod": "localhost",
+    "terminal.integrated.fontLigatures.enabled": true,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "remote.SSH.defaultExtensions": [
+        "anyscalecompute.anyscale-workspaces",
+        "ms-python.python",
+        "ms-toolsai.jupyter-renderers",
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.jupyter"
+    ],
+    "workbench.statusBar.visible": false
 }

@@ -5,8 +5,8 @@
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
     width: 83% !important; /* Increased from 80% to 83% */
-    height: 80% !important;
-    max-height: 100vh !important;
+    height: 90% !important;
+    max-height: 150vh !important;
     max-width: 1800px !important; /* Added max-width for very wide screens */
     z-index: 1000 !important;
 }
@@ -27,7 +27,7 @@
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
     width: 83% !important; /* Increased from 80% to 83% */
-    height: 80% !important;
+    height: 90% !important;
     max-width: 1800px !important; /* Added max-width for very wide screens */
 }
 

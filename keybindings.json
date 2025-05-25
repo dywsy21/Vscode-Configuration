@@ -699,17 +699,12 @@
         "command": "-workbench.action.focusSecondEditorGroup"
     },
     {
-        "key": "ctrl+1",
-        "command": "workbench.action.chat.openEditSession",
-        "when": "chatEditingParticipantRegistered && view != 'workbench.panel.chat.view.edits'"
-    },
-    {
         "key": "ctrl+shift+i",
         "command": "-workbench.action.chat.openEditSession",
         "when": "chatEditingParticipantRegistered && view != 'workbench.panel.chat.view.edits'"
     },
     {
-        "key": "ctrl+1",
+        "key": "ctrl+insert",
         "command": "workbench.panel.chatEditing",
         "when": "workbench.panel.chat.view.edits.active"
     },
@@ -719,7 +714,7 @@
         "when": "workbench.panel.chat.view.edits.active"
     },
     {
-        "key": "ctrl+2",
+        "key": "ctrl+insert",
         "command": "workbench.action.chat.open"
     },
     {
@@ -727,7 +722,7 @@
         "command": "-workbench.action.chat.open"
     },
     {
-        "key": "ctrl+2",
+        "key": "ctrl+1",
         "command": "workbench.panel.chat",
         "when": "workbench.panel.chat.view.copilot.active"
     },

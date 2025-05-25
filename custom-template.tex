@@ -98,25 +98,31 @@
 ]
 
 \lstset{
-    basicstyle=\consolasfont,  % Changed to use Consolas
+    basicstyle=\consolasfont\footnotesize,  % Use smaller font size
     backgroundcolor=\color{bg},
     lineskip=2pt,
     frame=single,
     framesep=1.5mm,
     rulecolor=\color{borderblue}, % Blue border
     numbers=left,
-    numberstyle=\small\color{gray}, % Changed from \tiny to \small
+    numberstyle=\small\color{gray},
     keywordstyle=\color{blue},
-    commentstyle=\color{green},
     commentstyle=\color{commentcolor}\itshape,
     stringstyle=\color{red},
     showstringspaces=false,
-    breaklines=true,  % Ensure lines break within margins
-    breakatwhitespace=true, % Allow breaking at whitespace
+    breaklines=true,  % Enable line breaking
+    breakatwhitespace=false, % Allow breaking anywhere, not just at whitespace
+    breakindent=20pt, % Indent broken lines
+    breakautoindent=true, % Auto-indent broken lines
+    xleftmargin=10pt, % Add left margin
+    xrightmargin=10pt, % Add right margin
     prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
-    postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookrightarrow}},
+    postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookrightarrow\space}},
     escapeinside={(*@}{@*)},
-    literate={-}{{\textendash}}1
+    literate={-}{{\textendash}}1,
+    columns=flexible, % Better character spacing
+    keepspaces=true, % Preserve spaces
+    tabsize=4 % Set tab size
 }
 
 \usepackage{etoolbox} % Add etoolbox package
