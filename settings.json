@@ -17,20 +17,19 @@
     "glassit.alpha": 255,
     "aide.aiCommand": "aider --openai-api-base https://api.zhiyunai168.com/v1 --vim #{filesRelativePath}",
     "terminal.integrated.defaultProfile.linux": "zsh",
-    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontSize": 19,
     "terminal.integrated.mouseWheelZoom": true,
     "editor.mouseWheelScrollSensitivity": 2.8,
     "editor.mouseWheelZoom": true,
     "terminal.integrated.mouseWheelScrollSensitivity": 2,
     "github.copilot.enable": {
         "*": true,
-        "plaintext": false,
         "markdown": false,
-        "scminput": false,
-        "sql": false,
-        "mermaid.gitGraph": true
+        "mermaid.gitGraph": true,
+        "plaintext": true,
+        "scminput": true
     },
-    "errorLens.enabled": false,
+    "errorLens.enabled": true,
     "vim.camelCaseMotion.enable": true,
     "vim.commandLineModeKeyBindings": [],
     "vim.easymotion": true,
@@ -300,9 +299,9 @@
         "gitDecoration.untrackedResourceForeground": "#f7aeae",
         "gitDecoration.ignoredResourceForeground": "#ffffff3b",
         "tab.activeBorderTop": "#0095ff",
-        "statusBar.background": "#5f0000",
-        "statusBar.noFolderBackground": "#5f0000",
-        "statusBar.debuggingBackground": "#5f0000",
+        "statusBar.background": "#5f00af",
+        "statusBar.noFolderBackground": "#5f00af",
+        "statusBar.debuggingBackground": "#5f00af",
         "statusBar.foreground": "#ffffff",
         "statusBar.debuggingForeground": "#ffffff",
         "editorBracketPairGuide.activeBackground1": "#ff9d00",
@@ -395,6 +394,7 @@
     "json.schemas": [],
     "vsicons.dontShowNewVersionMessage": true,
     "vscode_custom_css.imports": [
+    
         "file:///C:/Users/Admin/AppData/Roaming/Code/User/custom.css",
         "file:///C:/Users/Admin/AppData/Roaming/Code/User/custom-vscode.css",
         "file:///C:/Users/Admin/AppData/Roaming/Code/User/explorer.css",
@@ -407,7 +407,10 @@
     "gitlens.hovers.currentLine.over": "line",
     "remote.SSH.remotePlatform": {
         "10.176.37.42": "linux",
-        "10.176.50.37": "linux"
+        "10.176.50.37": "linux",
+        "192.168.1.105": "linux",
+        "10.176.34.210": "linux",
+        "192.168.1.106": "macOS"
     },
     "mesonbuild.downloadLanguageServer": true,
     "cmake.showOptionsMovedNotification": false,
@@ -618,7 +621,6 @@
     "liveshare.launcherClient": "visualStudioCode",
     "liveshare.notebooks.allowGuestExecuteCells": true,
     "liveshare.publishWorkspaceInfo": true,
-    "liveshare.connectionMode": "relay",
     "window.menuBarVisibility": "compact",
     "remote.extensionKind": {
         "WakaTime.vscode-wakatime": ["ui"],
@@ -647,7 +649,9 @@
     "latexPreview.dpi": 144,
     "window.titleBarStyle": "custom",
     "terminal.integrated.fontLigatures": true,
-    "github.copilot.advanced": {},
+    "github.copilot.advanced": {
+        "useLanguageServer": true,
+    },
     "chat.agent.enabled": true,
     "github.copilot.chat.generateTests.codeLens": true,
     "github.copilot.chat.search.semanticTextResults": true,
@@ -721,32 +725,6 @@
     "hediet.vscode-drawio.appearance": "dark",
     "glowrays.disableOnErrors": false,
     "glowrays.intensity": 1,
-    "mcp": {
-        "inputs": [
-          {
-            "type": "promptString",
-            "id": "github_token",
-            "description": "GitHub Personal Access Token",
-            "password": true
-          }
-        ],
-        "servers": {
-          "github": {
-            "command": "docker",
-            "args": [
-              "run",
-              "-i",
-              "--rm",
-              "-e",
-              "GITHUB_PERSONAL_ACCESS_TOKEN",
-              "ghcr.io/github/github-mcp-server"
-            ],
-            "env": {
-              "GITHUB_PERSONAL_ACCESS_TOKEN": "${input:github_token}"
-            }
-          }
-        }
-    },
     "markdown.marp.pdf.noteAnnotations": true,
     "markdown.marp.pptx.editable": "smart",
     "markdown.marp.themes": [
@@ -759,7 +737,7 @@
         "./themes/am_purple.scss",
         "./themes/am_red.scss"
     ],
-    "remote.WSL2.connectionMethod": "localhost",
+    "remote.WSL2.connectionMethod": "wsl.exe",
     "terminal.integrated.fontLigatures.enabled": true,
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
@@ -771,5 +749,43 @@
         "ms-toolsai.jupyter-keymap",
         "ms-toolsai.jupyter"
     ],
-    "workbench.statusBar.visible": false
+    "git.openRepositoryInParentFolders": "always",
+    "liveshare.languages.allowGuestCommandControl": true,
+    "liveshare.anonymousGuestApproval": "accept",
+    "codetogether.allowUnauthorizedCerts": true,
+    "editor.scrollOnMiddleClick": true,
+    "terminal.integrated.suggest.cdPath": "relative",
+    "terminal.integrated.suggest.enabled": true,
+    "terminal.integrated.shellIntegration.environmentReporting": true,
+    "terminal.integrated.allowMnemonics": true,
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.lineHeight": 1.2,
+    "github.copilot.chat.agent.thinkingTool": true,
+    "githubPullRequests.codingAgent.uiIntegration": true,
+    "chat.agent.maxRequests": 100,
+    "github.copilot.chat.agent.terminal.allowList": {
+        "make": true,
+        "pwd": true,
+        "cd": true,
+        "cp": true,
+        "mv": true,
+        "sed": true,
+        "grep": true,
+        "head": true,
+        "ls": true,
+        "cat": true,
+        "tail": true,
+        "sed -i": true,
+        "python": true,
+        "python3": true,
+        "awk": true
+    },
+    "codetogether.userName": "dywsy21",
+    "python.defaultInterpreterPath": "c:\\Users\\Admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "http.proxy": "http://192.168.1.105:8009",
+    "http.proxyAuthorization": null,
+    "chat.tools.terminal.autoApprove": {
+        "sed": true,
+        "rg": true
+    }
 }
